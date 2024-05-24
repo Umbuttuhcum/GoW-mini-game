@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+     <meta charset="UTF-8">
+     <title>God of War - mini game</title>
+	 <meta name="description" content="Just a little God of War mini game I am making to practice my JavaScript">
+	 <meta name="author" content="Kyrin Kompi">
+	 <link rel="icon" href="imagery/GOW symbol .png">
+	 <link rel="stylesheet" href="Stylation .css">
+	 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.css">
+  </head>
+  <body>
+         <center><img id="Title" src="imagery/God of war title .png"></center>                                                           <img id="Spartan" src="imagery/Spartan .png">
+     <div class="Game">
+	     <button id='music-option'>
+			 <i id ="music-note" class="fa-sharp fa-solid fa-music fa-xl" style="color: #0d0d0d;"></i>
+		 </button>
+		 <button id="settings">
+		     <i id="gear" class="fa-solid fa-gear fa-xl" style="color: #0d0d0d;"></i>
+		 </button>
+		<div class="Settings">
+		     <p><i> Music volume </i></p>
+			 <div class="audio">
+		            <i  id="lower-volume" class="fa-solid fa-volume-low fa-xl"></i>
+					<i id="mute" class="fa-solid fa-volume-xmark fa-xl"></i>
+				 <!-- <input type="range" min="10" max="100" value="100" id="volume-slider"> -->
+			        <i id="higher-volume" class="fa-solid fa-volume-high fa-xl"></i>
+			 </div>
+			 <br><br><br><br><br>
+			 <p>Current volume: <span id="Volume"> 100 </span></p>
+		</div>
+         <div class="Stats">
+             <span class="stat">Exp: <strong><span id="Exp-text" >0</span></strong></span>
+             <span class="stat">Health: <strong><span id="Health-text" >100</span></strong></span>
+             <span class="stat">Orbs: <strong><span id="Orbs-text" >0</span></strong></span>
+         </div>
+		     <center>
+             <div id="text">
+                 Welcome to God of War. You must defeat Zeus to get Kratos' revenge and conclude the game. You are currently in Sparta, your home. Where do you want to go first? Use the buttons below to go where you want.
+              </div>
+			  <div id="text2">
+			     
+			  </div>
+		      <div id="Enemy-info">
+		         Enemies information will display here when you hover on the button.
+		     </div>
+		     </center>
+		     <center>
+	         <div class="Enemy-stats">
+                 <span class="stat">Enemy: <strong><span id="Enemy-name"></span></strong></span>
+                 <span class="stat">Health: <strong><span id="Enemy-health"></span></strong></span>
+             </div>
+			 </center>
+	       <center>
+		     <img id="Kratos-at-Sparta" src="imagery/Kratos at Durban .png" loading ='lazy'>
+			 <img id="Sparta" src="imagery/Sparta .png" loading ='lazy'>
+			 
+		  <!-- shop images -->
+		  
+			 <img id="Trader" src="imagery/Trader .png" loading ='lazy'>
+			 <img id="At-Trader" src="imagery/At Trader .png" loading ='lazy'>
+			 <img id="B-o-c" src="imagery/Blades of chaos .png" loading ='lazy'>
+			 <img id="Potion" src="imagery/Health potion .png" loading ='lazy'>
+			 <img id="Nemesis-whip" src="imagery/Nemesis Whip .png" loading ='lazy'>
+			 <img id="Whip-claim" src="imagery/Kratos with Nemesis whip .png" loading ='lazy'>
+			 <img id="Gauntlet-of-Zeus" src="imagery/Gauntlet of Zeus .png" loading ='lazy'>
+			 <img id="Gauntlet-claim" src="imagery/Kratos with Gauntlet of Zeus .png" loading ='lazy'>
+			 <img id="Claws-of-Hades" src="imagery/Claws of Hades .png" loading ='lazy'>
+			 <img id="Claws-claim" src="imagery/Kratos with Claws of hades .png" loading ='lazy'>
+			 <img id="Blade-of-Olympus" src="imagery/Blade of Olympus .png" loading ='lazy'>
+			 <img id="Blade-claim" src="imagery/Kratos with Blade of olympus .png" loading ='lazy'>
+			 
+		  <!--  Shop items info -->
+		  
+			 <div class="Sell-price">
+			    <i><span id="Sell-text"> </span></i>
+			 </div>
+			 <div class="Potion-info">
+			    <i id="italics"> <font color="#299617"> +10 health </font></i> <br>
+			    <i id="italics"><font color="#8c4004">Price: </font> 22 orbs </i>
+			 </div>
+			 <div class="Whip-info">
+			    <i id="italics"><font color="#8c4004"> Price: </font> 55 orbs </i> <br>
+				<i id="italics"><font color="#c29200"> Damage: </font><span id ="Whip-damage"> </span> </i>
+			 </div>
+			 <div class="Gauntlet-info">
+			    <i id="italics"><font color="#8c4004"> Price: </font> 99 orbs? </i> <br>
+				<i id="italics"><font color="#c29200"> Damage:  </font> <span id ="Gauntlet-damage"> </span> </i>
+			 </div>
+			 <div class="Claws-info">
+			    <i id="italics"><font color="#8c4004"> Price: </font> 155 orbs </i> <br>
+				<i id="italics"><font color="#c29200"> Damage: </font> <span id ="Claws-damage"> </span> </i>
+			 </div>
+			 <div class="BladeO-info">
+			    <i id="italics"><font color="#8c4004"> Price: </font> 200 orbs </i> <br>
+				<i id="italics"><font color="#c29200"> Damage: </font> <span id ="Blade-damage"> </span> </i>
+			 </div>
+			 
+		  <!-- Underworld images -->
+		  
+			 <img id="Underworld" src="imagery/Underworld .png" loading ='lazy'>
+			 
+			 <img id="Kratos-in-Underworld" src="imagery/Kratos in underworld .png" loading ='lazy'>
+			 <img id="Hoplite" src="imagery/Hoplite .png" loading ='lazy'>
+			 <img id="Hoplite-attack" src="imagery/Kratos attacking Hoplite .png" loading ='lazy'>
+			 <img id="Hoplite-kill" src="imagery/Kratos killing Hoplite .png" loading ='lazy'>
+			 <img id="Banshee" src="imagery/Banshee .png" loading ='lazy'>
+			 <img id="Banshee-attack" src="imagery/Kratos attacking Banshee .png" loading ='lazy'>
+			 <img id="Banshee-kill" src="imagery/Kratos kills Banshee .png" loading ='lazy'>
+			 <img id="Satyr" src="imagery/Satyr .png" loading ='lazy'>
+			 <img id="Satyr-attack" src="imagery/Kratos attacks Satyr .png" loading ='lazy'>
+			 <img id="Satyr-kill" src="imagery/Kratos kills Satyr .png" loading ='lazy'>
+			 <img id="Minotaur" src="imagery/Minotaur .png" loading ='lazy'>
+			 <img id="Minotaur-attack" src="imagery/Kratos attacks Minotaur .png" loading ='lazy'>
+			 <img id="Minotaur-kill" src="imagery/Kratos kills Minotaur .png" loading ='lazy'>
+			 <img id="Medusa" src="imagery/Medusa .png" loading ='lazy'>
+			 <img id="Medusa-attack" src="imagery/Kratos attacks Medusa .png" loading ='lazy'>
+			 <img id="Medusa-kill" src="imagery/Kratos kills Medusa .png" loading ='lazy'>
+			 <img id="Cyclops" src="imagery/Cyclops .png" loading ='lazy'>
+			 <img id="Cyclops-attack" src="imagery/Kratos attacks Cyclops .png" loading ='lazy'>
+			 <img id="Cyclops-kill" src="imagery/Kratos kills Cyclops .png" loading ='lazy'>
+			 
+		  <!-- Mount Olympus images -->
+		  
+			 <img id="Mount-Olympus" src="imagery/Mount Olympus .png" loading ='lazy'>
+			 
+			 <img id="Kratos-at-Olympus" src="imagery/Kratos at Mount Olympus .png" loading ='lazy'>
+			 <img id="Hermes"src="imagery/Hermes .png" loading ='lazy'>
+			 <img id="HermesxKratos" src="imagery/Hermes x Kratos .png" loading ='lazy'>
+			 <img id="Hermes-fight" src="imagery/Kratos fighting Hermes .png" loading ='lazy'>
+			 <img id="Hermes-kill" src="imagery/Kratos killing Hermes .png" loading ='lazy'>
+			 <img id="Hercules" src="imagery/Hercules .png" loading ='lazy'>
+			 <img id="HerculesxKratos" src="imagery/Hercules x Kratos .png" loading ='lazy'>
+			 <img id="Hercules-fight" src="imagery/Kratos fights Hercules .png" loading ='lazy'>
+			 <img id="Hercules-kill" src="imagery/Hercules dead .png" loading ='lazy'>
+	         <img id="Zeus" src="imagery/Zeus .png" loading ='lazy'>
+			 <img id="ZeusxKratos" src="imagery/Zeus x Kratos .png" loading ='lazy'>
+			 <img id="Zeus-fight" src="imagery/Kratos vs Zues .png" loading ='lazy'>
+			 <img id="Zeus-kill" src="imagery/Kratos kills Zeus .png" loading ='lazy'>
+			 
+		 <!-- Battle images -->
+		 
+			 <!-- <img id="Kratos-evading" src="imagery/"> -->
+			 <img id="Kratos-running" src="imagery/Kratos running .png" loading ='lazy'>
+			 <img id="You-dead" src="imagery/You are dead GoW CoO .png" loading ='lazy'>
+			 <img id="Kratos-dead" src="imagery/Kratos dead .png" loading ='lazy'>
+		   </center>
+		   
+		 <div class="Controls">
+		 
+      <!-- Shop buttons -->
+	  
+            <button id="Shop">Shop</button>
+			
+            <button id="Sell-weapon">Sell weapon</button>
+			<button id="Buy-health">Health potion</button>
+            <button id="Nemesis-whipB">Nemesis whip</button>
+            <button id="GauntletB">Gauntlet of Zeus</button>
+            <button id="Claws">Claws of Hades</button>
+            <button id="Blade-of-OlympusB">Blades of Olympus</button>
+            <button id="Leave-shop">Return to Sparta</button>
+			
+		 <!-- Underworld -->
+		 
+            <button id="Underworld-button">Underworld</button>
+			
+		 <!--  Battle Hoplite -->
+			<button id="HopliteB">Hoplite</button>
+		    <button id="Attack-Hoplite">Attack</button>
+		 <!-- Battle  Banshee -->
+			<button id="BansheeB">Banshee</button>
+			<button id="Attack-Banshee">Attack</button>
+		 <!-- Battle Satyr -->
+		    <button id="SatyrB">Satyr</button>
+			<button id="Attack-Satyr">Attack</button>
+		 <!-- Battle  Minotaur -->
+			<button id="MinotaurB">Minotaur</button>
+			<button id="Attack-Minotaur">Attack</button>
+		 <!-- Battle  Medusa-->
+			<button id="MedusaB">Medusa</button>
+			<button id="Attack-Medusa">Attack</button>
+		 <!-- Battle  Cyclops -->
+			<button id="CyclopsB">Cyclops</button>
+			<button id="Attack-Cyclops">Attack</button>
+			
+		 <!-- Other options  underworld-->
+		 
+			<button id="Evade-enemy">Evade</button>
+			<button id="Escape-enemy">Run</button>
+			<button id="Leave-Underworld">Return to Sparta</button>
+			
+		 <!-- Mount Olympus -->
+		 
+            <button id="Olympus-button">Mount Olympus</button>
+			
+		 <!-- Hermes battle -->
+			<button id="HermesB">Hermes</button>
+			<button id="Attack-Hermes">Attack</button>
+		 <!-- Hercules battle -->
+			<button id="HerculesB">Hercules</button>
+			<button id="Attack-Hercules">Attack</button>
+		 <!-- Zeus battle -->
+			<button id="ZeusB">Zeus</button>
+			<button id="Attack-Zeus">Attack</button>
+			
+		 <!-- Other options Olympus -->
+		 
+			<button id="Run-from-god">Run</button>
+			<button id="Leave-Olympus">Return to Sparta</button>
+			
+		 <!-- Reset -->
+		 
+			<button id='Reset'>Restart?</button>   
+			
+         </div>
+     </div>
+	 <h2> Careful not to reload the page or you will lose all progress. </h2>
+	 <!-- <div class="Kratos3D"> -->
+	 </div>
+     <script src="Functions .js"></script>
+  </body>
+  
+</html>
