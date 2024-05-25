@@ -378,7 +378,7 @@ mute.addEventListener('click', event => {
     cyclopsBattle.volume = 0;
     zeusBattle.volume = 0;
     volume = 0;
-    voltext = volume;
+    voltext.innerText = volume;
 });
 
 // Main menu buttons functions
