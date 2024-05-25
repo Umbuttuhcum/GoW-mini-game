@@ -295,6 +295,9 @@ body {
 #Zeus-kill {
 	border: 3px outset #a29078;
 }
+#Kratos-running {
+	width: 420px;
+}
 
 .Sell-price, .Potion-info, .Whip-info, .Gauntlet-info, .Claws-info, .BladeO-info {
     display: none;
