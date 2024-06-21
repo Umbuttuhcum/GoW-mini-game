@@ -465,7 +465,7 @@ underworldB.addEventListener('mouseout', event => {
 });
 underworldB.addEventListener('click', event => {
   selection.play();
-  if (pop == 2) {
+  if (pop == true) {
     menuTheme.pause();
     menuTheme.currentTime = 0;
     underworldAm.play()
@@ -531,7 +531,7 @@ olympusB.addEventListener('mouseout', event => {
 });
 olympusB.addEventListener('click', event => {
   selection.play();
-  if (pop == 2) {
+  if (pop == true) {
     menuTheme.pause();
     menuTheme.currentTime= 0;
     olympusAm.play()
@@ -2307,7 +2307,7 @@ function ambienceStop() {
 }
 
 function mainAppear() {
-  if(pop == 2) {
+  if(pop == true) {
     menuTheme.play();
   }
   musicOption.style.display = 'inline'
