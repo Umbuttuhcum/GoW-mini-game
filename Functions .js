@@ -129,7 +129,7 @@ let drink = new Audio('Audio/Drinking .mp3');
 
 let exp = 0;
 let health = 100;
-let orbs = 800;
+let orbs = 0;
 let currentWeapon = 0;
 let fighting;
 let enemyHealth;
