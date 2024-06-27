@@ -1,4 +1,3 @@
-
 // Image declarations
 
 let spartan = document.getElementById('Spartan');
@@ -6,14 +5,15 @@ let kratosAtSparta = document.getElementById('Kratos-at-Sparta');
 let sparta = document.getElementById('Sparta');
 let trader = document.getElementById('Trader');
 let atTrader = document.getElementById('At-Trader');
+let mVillager = document.getElementById('Mvillager');
 let boc = document.getElementById('B-o-c');
 let potion = document.getElementById('Potion');
-let nemesiswhip = document.getElementById('Nemesis-whip');
-let whipClaim = document.getElementsByName('Whip-claim');
+let nemesisWhip = document.getElementById('Nemesis-whip');
+let whipClaim = document.getElementById('Whip-claim');
 let gauntletZeus= document.getElementById('Gauntlet-of-Zeus');
 let gauntletClaim = document.getElementById('Gauntlet-claim');
 let clawsHades = document.getElementById('Claws-of-Hades');
-let clawsClaim = document.getElementsByName('Claws-claim');
+let clawsClaim = document.getElementById('Claws-claim');
 let bladeOlympus = document.getElementById('Blade-of-Olympus');
 let bladeClaim = document.getElementById('Blade-claim');
 let underworld = document.getElementById('Underworld');
@@ -61,8 +61,15 @@ let hoverSound = new Audio('Audio/Hover sound GoW2 .mp3');
 let selection = new Audio('Audio/GoW CoO Selection sound .mp3');
 let selection2 = new Audio('Audio/Other selection sound GoW2 .mp3');
 let returnSound = new Audio('Audio/GoW CoO Exit sound .mp3');
+let swordThud = new Audio('Audio/Sword thud .mp3');
+let hmmmm = new Audio('Audio/Hmm hmm Mc villager .mp3');
 let noice = new Audio('Audio/Noice .mp3');
 let bruh = new Audio('Audio/Bruh .mp3');
+let bocsound = new Audio('Audio/Blades of chaos sound .mp3');
+let gozsound = new Audio('Audio/Gauntlet of zeus sound .mp3')
+let nwsound = new Audio('Audio/Nemesis whip sound .mp3');
+let cohsound = new Audio('Audio/Claws of Hades sound .mp3');
+let ncsound = new Audio('Audio/Nemean cestus sound .mp3');
 let brokie = new Audio('Audio/YOURE BROKE! .mp3');
 let battleTheme = new Audio('Audio/Gow CoO Battle theme .mp3');
 let battleTheme2 = new Audio('Audio/Gow CoO Battle theme 2.mp3');
@@ -115,13 +122,14 @@ let heartbeat = new Audio('Audio/Heartbeat .mp3');
 let deathSound = new Audio('Audio/Kratos death sound GoW2 2 .mp3');
 let deathScream = new Audio('Audio/Kratos death sound GoW2 .mp3');
 let deathScream2 = new Audio('Audio/Kratos death sound GoW2 2 .mp3');
-let ahShit = new Audio('Audio/Ah shit,here we go again .mp3');
+let ahShit = new Audio('Audio/Ah shit, here we go again .mp3');
+let drink = new Audio('Audio/Drinking .mp3');
 
 // Stats declarations
 
 let exp = 0;
 let health = 100;
-let orbs = 0;
+let orbs = 800;
 let currentWeapon = 0;
 let fighting;
 let enemyHealth;
@@ -186,40 +194,49 @@ let enemies = [
 
 // Text declarations
 
-let text = document.getElementById('text');
-let text2 = document.getElementById('text2');
-let voltext = document.getElementById('Volume');
-let expText = document.getElementById('Exp-text');
-let healthText = document.getElementById('Health-text');
-let orbsText = document.getElementById('Orbs-text');
-let sellText = document.getElementById('Sell-text');
-let whipDamage = document.getElementById('Whip-damage');
-    whipDamage.innerText = weapons[1].damage;
-let gauntletDamage = document.getElementById('Gauntlet-damage');
-    gauntletDamage.innerText = weapons[2].damage;
-let clawsDamage = document.getElementById('Claws-damage');
-    clawsDamage.innerText = weapons[3].damage;
-let bladeDamage = document.getElementById('Blade-damage');
-    bladeDamage.innerText = weapons[4].damage;
-let enemyName = document.getElementById('Enemy-name');
-let enemyInfo = document.getElementById('Enemy-info');
-let enemyHealthText = document.getElementById('Enemy-health');
+const porp = document.getElementById('porp');
+const text = document.getElementById('text');
+const text2 = document.getElementById('text2');
+const voltext = document.getElementById('Volume');
+const expText = document.getElementById('Exp-text');
+const healthText = document.getElementById('Health-text');
+const orbsText = document.getElementById('Orbs-text');
+const maxed = document.getElementById('Maxed');
+const pqText = document.getElementById('potion-quantity');
+const sellText = document.getElementById('Sell-text');
+const whipDamage = document.getElementById('Whip-damage');
+      whipDamage.innerText = weapons[1].damage;
+const gauntletDamage = document.getElementById('Gauntlet-damage');
+      gauntletDamage.innerText = weapons[2].damage;
+const clawsDamage = document.getElementById('Claws-damage');
+      clawsDamage.innerText = weapons[3].damage;
+const bladeDamage = document.getElementById('Blade-damage');
+      bladeDamage.innerText = weapons[4].damage;
+const enemyName = document.getElementById('Enemy-name');
+const enemyInfo = document.getElementById('Enemy-info');
+const enemyHealthText = document.getElementById('Enemy-health');
 
 // Container declarations
 
-let gamebox = document.querySelector('.Game');
-let settings = document.querySelector('.Settings');
-let sellCon = document.querySelector('.Sell-price');
-let potionInfo = document.querySelector('.Potion-info');
-let whipInfo = document.querySelector('.Whip-info');
-let gauntletInfo = document.querySelector('.Gauntlet-info');
-let clawsInfo = document.querySelector('.Claws-info');
-let bladeInfo = document.querySelector('.BladeO-info');
-let enemyStats = document.querySelector('.Enemy-stats');
+const gamebox = document.querySelector('.Game');
+const settings = document.querySelector('.Settings');
+const sellCon = document.querySelector('.Sell-price');
+const potionInfo = document.querySelector('.Potion-info');
+const whipInfo = document.querySelector('.Whip-info');
+const gauntletInfo = document.querySelector('.Gauntlet-info');
+const clawsInfo = document.querySelector('.Claws-info');
+const bladeInfo = document.querySelector('.BladeO-info');
+const enemyStats = document.querySelector('.Enemy-stats');
+const hotbar = document.querySelector('.Hotbar');
+const pslot = document.getElementById('Pslot');
+const slot1 = document.getElementById('Slot1');
+const slot2 = document.getElementById('Slot2');
+const slot3 = document.getElementById('Slot3');
+const slot4 = document.getElementById('Slot4');
+const slot5 = document.getElementById('Slot5');
 
-// Button declarations|
+// Button declarations
 
-let clicks = 0;
 let settingsB = document.getElementById('settings');
 let musicOption = document.getElementById('music-option');
 let shop = document.getElementById('Shop');
@@ -259,11 +276,12 @@ let reset = document.getElementById('Reset');
 
 // Icon declarations
 
-let musicnote = document.getElementById('music-note');
-let gear = document.getElementById('gear');
-let volup = document.getElementById('higher-volume');
-let voldown = document.getElementById('lower-volume');
-let mute = document.getElementById('mute');
+const musicnote = document.getElementById('music-note');
+const gear = document.getElementById('gear');
+const volup = document.getElementById('higher-volume');
+const voldown = document.getElementById('lower-volume');
+const mute = document.getElementById('mute');
+const expand = document.getElementById('expand');
 
 // function declarations
 
@@ -273,9 +291,26 @@ let satat;
 let minat;
 let medat;
 let cyclat;
+let tct;
+let tct2;
 let hermat;
 let hercat;
 let zeuat;
+
+// Other declarations 
+
+let clicks = 0;
+let play = false;
+let set = false;
+let volume = 100;
+let expanded = false;
+let count = 0;
+let potionquantity = 0;
+let whipClaimed = false;
+let gauntletClaimed = false;
+let clawsClaimed = false;
+let bladeClaimed = false;
+let timed = false;
 
 // Just an extra function
 
@@ -288,31 +323,36 @@ gamebox.addEventListener('mouseout', event => {
 
 //                                                                                                       Initialize buttons
 
-// Sound Settings 
+//  Settings 
 
 musicOption.addEventListener('mouseover', event => {
     hoverSound.play();
     musicnote.style.color = '#614051';
+    porp.style.display = 'inline';
+    if (play == true) {
+        porp.innerText = "Pause main menu music?"
+    } else {
+        porp.innerText = "Play main menu music?"
+    }
 });
 musicOption.addEventListener('mouseout', event => {
     hoverSound.pause(); 
     hoverSound.currentTime = 0;
     musicnote.style.color = '#0d0d0d';
+    porp.style.display = 'none';
 });
 
-let pop = false;
-
 musicOption.addEventListener('click', event => {
-    switch(pop) {
+    switch(play) {
       case false:
       menuTheme.play();
       musicOption.style.background = 'grey';
-      pop = true;
+      play = true;
       break;
       case true:
       menuTheme.pause();
       musicOption.style.background = '#464646';
-      pop = false;
+      play = false;
     }
 });
 
@@ -328,8 +368,6 @@ settingsB.addEventListener('mouseout', event => {
     gear.style.color = '#0d0d0d';
 });
 
-let set = false;
-
 settingsB.addEventListener('click', event => {
   switch(set) {
     case false:
@@ -344,7 +382,7 @@ settingsB.addEventListener('click', event => {
   }
 });
 
-let volume = 100;
+// Volume functions
 
 volup.addEventListener('click', event => {
     if (volume <= 100 ) {
@@ -381,13 +419,113 @@ mute.addEventListener('click', event => {
     voltext.innerText = volume;
 });
 
+// Screen option functions
+
+expand.addEventListener('click', event => {
+
+  var stat = document.querySelectorAll('.stat');
+  var images = document.querySelectorAll('.exi');
+  var defim = document.querySelectorAll('.def');
+  var itemInfo = document.querySelectorAll('.Item-info');
+  var controlButtons = document.querySelectorAll('.conbut');
+
+  switch(expanded) {
+    case false: 
+
+       expanded = true;
+       expand.style.color = '#2e271d';
+       expand.style.scale = '1.2';
+
+       gamebox.style.width = '1000px';
+       settings.style.left = '18.5cm';
+       musicOption.style.width = '40px';
+       musicOption.style.height = '48px';
+       settingsB.style.width = '40px';
+       settingsB.style.height = '48px';
+       stat.forEach(element => {
+          element.style.fontSize = '20px';
+       });
+
+       text.style.fontSize = '20px';
+       text2.style.fontSize = '20px';
+
+       images.forEach(element => {
+          element.style.height = '245px';
+       });
+       defim.forEach(element => {
+         element.style.width = '535px';
+       });
+       potion.style.width = '245px';
+       itemInfo.forEach(element => {
+         element.style.fontSize = '18px';
+       });
+
+       underworld.style.width = '625px';
+       mountOlympus.style.width = '480px';
+       herculesxkratos.style.width = '470px';
+       herculesFight.style.width = '405px';
+       herculesKill.style.width = '460px';
+     
+       controlButtons.forEach(element => {
+         element.style.width = '5.5cm';
+         element.style.height = '40px';
+         element.style.fontSize = '18px';
+       });
+
+       break;
+       case true:
+
+       expanded = false;
+       expand.style.color = 'white';
+       expand.style.scale = '1';
+
+       gamebox.style.width = '840px';
+       settings.style.left = '14.2cm';
+       musicOption.style.width = '35px';
+       musicOption.style.height = '42px';
+       settingsB.style.width = '35px';
+       settingsB.style.height = '42px';
+       stat.forEach(element => {
+          element.style.fontSize = '17px';
+       });
+
+       text.style.fontSize = '17px';
+       text2.style.fontSize = '17px';
+
+       images.forEach(element => {
+          element.style.height = '220px';
+       });
+       defim.forEach(element => {
+         element.style.width = '480px';
+       });
+       potion.style.width = '220px';
+       itemInfo.forEach(element => {
+         element.style.fontSize = '16px';
+       });
+
+       underworld.style.width = '580px';
+       mountOlympus.style.width = '440px';
+       herculesxkratos.style.width = '445px';
+       herculesFight.style.width = '380px';
+       herculesKill.style.width = '435px';
+     
+       controlButtons.forEach(element => {
+         element.style.width = '5cm';
+         element.style.height = '30px';
+         element.style.fontSize = '17px';
+       });
+       break;
+      }
+    
+});
+
 // Main menu buttons functions
 
 shop.addEventListener('mouseover', event => {
   hoverSound.play();
   gamebox.style.background = '#09090b';
   kratosAtSparta.style.position = 'absolute';
-  kratosAtSparta.style.left = '35cm';
+  kratosAtSparta.style.left = '40cm';
   trader.style.display = 'block';
   text.innerText = "You can go to the shop to get weapons with orbs to get stronger to defeat stronger enemies. \n 🏪";
   shop.style.background = '#09090b';
@@ -412,7 +550,7 @@ shop.addEventListener('click', event => {
   shop.style.display = 'none';
   setTimeout(() => {
     gamebox.style.background = '#09090b';
-  }, 1);
+  }, 5);
   musicOption.style.background = '#09090b';
   settingsB.style.background = '#09090b';
   kratosAtSparta.style.display = 'none';
@@ -437,16 +575,17 @@ shop.addEventListener('click', event => {
   bladeOlympusB.style.display = 'inline';
   bladeOlympusB.style.animationDuration = '2s';
   bladeOlympusB.style.animationTimingFunction = 'linear';
-  leaveShop.style.display = 'inline';
+  leaveShop.style.display = 'block';
   leaveShop.style.animationDuration = '2s';
   leaveShop.style.animationTimingFunction = 'linear';
+  showHotbar()
 });
 
 underworldB.addEventListener('mouseover', event => {
   hoverSound.play();
   gamebox.style.background = '#2f1c12';
   kratosAtSparta.style.position = 'absolute';
-  kratosAtSparta.style.left = '35cm';
+  kratosAtSparta.style.left = '40cm';
   underworld.style.display = 'block';
   text.innerText = "This is the underworld. Where you will see a bunch of strange creatures you will have to defeat to get stronger so you can defeat Zeus. \n 🔥";
   underworldB.style.background = '#2f1c12';
@@ -465,25 +604,21 @@ underworldB.addEventListener('mouseout', event => {
 });
 underworldB.addEventListener('click', event => {
   selection.play();
-  if (pop == true) {
-    menuTheme.pause();
-    menuTheme.currentTime = 0;
-    underworldAm.play()
-  } else {
-    underworldAm.play()
+  if (play == true) {
+     menuTheme.pause();
+     menuTheme.currentTime = 0;
+     underworldAm.play();
+     underworldAm.loop = true;
+   } else {
+     underworldAm.play();
+     underworldAm.loop = true;
   }
   setTimeout(() => {
      gamebox.style.background = "#3c3837"
-  }, 1);
+  }, 4);
+  mainDisappear();
   settingsB.style.background = '#3c3837';
-  text.style.display = 'none';
-  text2.style.display = 'inline-block';
-  text2.innerText = 'You have arrived in the underworld. You see some strange creatures. Choose which one you want to attack. Be sure to attack one that you are sure you can defeat. \n ⇊';
-  underworldB.style.display = 'none';
-  musicOption.style.display = 'none'
-  kratosAtSparta.style.display = 'none';
-  shop.style.display = 'none';
-  olympusB.style.display = 'none';
+  text2.innerText = 'You have arrived in the underworld. You see some strange creatures. Choose which one you want to attack. Be sure to attack one that you are sure you can defeat.';
   kratosUnderworld.style.display = 'block';
   hopliteB.style.display = 'inline';
   hopliteB.style.animationDuration = '2s';
@@ -503,7 +638,7 @@ underworldB.addEventListener('click', event => {
   cyclopsB.style.display = 'inline';
   cyclopsB.style.animationDuration = '2s';
   cyclopsB.style.animationTimingFunction = 'linear';
-  leaveUnderworld.style.display = 'inline';
+  leaveUnderworld.style.display = 'block';
   leaveUnderworld.style.animationDuration = '2s';
   leaveUnderworld.style.animationTimingFunction = 'linear';
 });
@@ -512,7 +647,7 @@ olympusB.addEventListener('mouseover', event => {
   hoverSound.play();
   gamebox.style.background = 'rgba(102,47,18,255)';
   kratosAtSparta.style.position = 'absolute';
-  kratosAtSparta.style.left = '35cm';
+  kratosAtSparta.style.left = '40cm';
   mountOlympus.style.display = 'block';
   text.innerText = "This is Mount Olympus. Where you will fight the gods of olympus and where you can fight Zeus when you are ready. I suggest you only come here when you have defeated all the createres of the underworld. Otherwise, you are not ready for this smoke.";
   olympusB.style.background = 'rgba(102,47,18,255)';
@@ -531,25 +666,21 @@ olympusB.addEventListener('mouseout', event => {
 });
 olympusB.addEventListener('click', event => {
   selection.play();
-  if (pop == true) {
+  if (play == true) {
     menuTheme.pause();
-    menuTheme.currentTime= 0;
+    menuTheme.currentTime = 0;
     olympusAm.play()
+	  olympusAm.loop = true;
   } else {
     olympusAm.play()
+    olympusAm.loop = true;
   }
-  text.style.display = 'none';
-  text2.style.display = 'inline-block';
-  text2.innerText = 'You have now arrived at Olympus. Choose which god you want to battle. Be sure to at least have the Gauntlet weapon as these gods are strong. \n ⇈';
+  mainDisappear();
+  text2.innerText = 'You have now arrived at Olympus. Choose which god you want to battle. Be sure to at least have the Gauntlet weapon as these gods are strong.';
   setTimeout(() => {
      gamebox.style.background = '#335168';
-  }, 1);
+  }, 4);
   settingsB.style.background = '#335168';
-  olympusB.style.display = 'none';
-  musicOption.style.display = 'none'
-  shop.style.display = 'none';
-  underworldB.style.display = 'none';
-  kratosAtSparta.style.display = 'none';
   kratosOlympus.style.display = 'inline-block';
   herculesB.style.display = 'inline';
   herculesB.style.animationDuration = '2s';
@@ -560,36 +691,76 @@ olympusB.addEventListener('click', event => {
   zeusB.style.display = 'inline';
   zeusB.style.animationDuration = '2s';
   zeusB.style.animationTimingFunction = 'linear';
-  leaveOlympus.style.display = 'inline';
+  leaveOlympus.style.display = 'block';
   leaveOlympus.style.animationDuration = '2s';
-  leaveOlympus.style.animationTimingFunction = 'linear';
+  leaveOlympus.style.animationTimingFunction = 'block';
 });
+
+function mainDisappear() {
+  musicOption.style.display = 'none';
+  text.style.display = 'none';
+  text2.style.display = 'inline-block';
+  kratosAtSparta.style.display = 'none';
+  olympusB.style.display = 'none';
+  shop.style.display = 'none';
+  underworldB.style.display = 'none';
+  showHotbar()
+}
 
 // Shop functions
 
 sellWeaponB.addEventListener('mouseover', event => {
   hoverSound.play();
-  atTrader.style.display = 'none';
-  if (inventory.length = 1) {
-    boc.style.display = 'inline-block';
-  } else {
-    nemesiswhip.style.display = 'none';
+  aTdis();
+  sellCon.style.display = 'inline';
+  switch (currentWeapon) {
+    case 0:
+      boc.style.display = 'block';
+      sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 17 orbs?";
+    break;
+    case 1:
+      nemesisWhip.style.display = 'block';
+      sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 25 orbs?";
+    break;
+    case 2:
+      gauntletZeus.style.display = 'block';
+      sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 42 orbs?";
+    break;
+    case 3: 
+      clawsHades.style.display = 'block';
+      sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 70 orbs?";
+    break;
+    case 4:
+      bladeOlympus.style.display= 'block';
+      sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 100 orbs?";
+    break;
   }
-  sellCon.style.display = 'inline-block';
   sellWeaponB.style.animation = 'vertical-shaking 0.5s';
-  sellText.innerText = "Sell the " + weapons[currentWeapon].name + " for 28 orbs?";
 });
 sellWeaponB.addEventListener('mouseout', event => {
   hoverSound.pause();
-  atTrader.style.display = 'block';
-  boc.style.display = 'none';
   hoverSound.currentTime = 0;
+  aTap();
+  switch (currentWeapon) {
+    case 0:
+      boc.style.display = 'none';
+    break;
+    case 1:
+      nemesisWhip.style.display = 'none';
+    break;
+    case 2:
+      gauntletZeus.style.display = 'none';
+    case 3: 
+      clawsHades.style.display = 'none';
+    break;
+    case 4:
+      bladeOlympus.style.display= 'none';
+    break;
+  }
   sellWeaponB.style.animation = 'grow';
   sellCon.style.display = 'none';
 });
-sellWeaponB.addEventListener('click', event => {
-  sellWeapon();
-});
+sellWeaponB.addEventListener('click', sellWeapon );
 
 potionB.addEventListener('mouseover', event => {
   hoverSound.play();
@@ -606,15 +777,13 @@ potionB.addEventListener('mouseout', event => {
   potion.style.display = 'none';
   potionInfo.style.display = 'none';
 });
-potionB.addEventListener('click', event => {
-  increaseHealth();
-});
+potionB.addEventListener('click', buyPotion );
 
 nemesisWhipB.addEventListener('mouseover', event => {
   hoverSound.play();
   nemesisWhipB.style.animation = 'tilt-shaking 0.5s';
   atTrader.style.display = 'none';
-  nemesiswhip.style.display = 'inline-block';
+  nemesisWhip.style.display = 'inline-block';
   whipInfo.style.display = 'inline-block';
 });
 nemesisWhipB.addEventListener('mouseout', event => {
@@ -622,12 +791,10 @@ nemesisWhipB.addEventListener('mouseout', event => {
   hoverSound.currentTime = 0;
   nemesisWhipB.style.animation = 'grow';
   atTrader.style.display = 'block';
-  nemesiswhip.style.display = 'none';
+  nemesisWhip.style.display = 'none';
   whipInfo.style.display = 'none';
 });
-nemesisWhipB.addEventListener('click', event => {
-  buyWhip();
-});
+nemesisWhipB.addEventListener('click', buyWhip);
 
 gauntletB.addEventListener('mouseover', event => {
   hoverSound.play();
@@ -644,9 +811,7 @@ gauntletB.addEventListener('mouseout', event => {
   gauntletZeus.style.display = 'none';
   gauntletInfo.style.display = 'none';
 });
-gauntletB.addEventListener('click', event => {
-  buyGauntlet();
-});
+gauntletB.addEventListener('click', buyGauntlet);
 
 clawsB.addEventListener('mouseover', event => {
   hoverSound.play();
@@ -664,9 +829,7 @@ clawsB.addEventListener('mouseout', event => {
   clawsHades.style.display = 'none';
   clawsInfo.style.display = 'none';
 });
-clawsB.addEventListener('click', event => {
-  buyClaws();
-});
+clawsB.addEventListener('click', buyClaws );
 
 bladeOlympusB.addEventListener('mouseover', event => {
   hoverSound.play();
@@ -683,16 +846,14 @@ bladeOlympusB.addEventListener('mouseout', event => {
   bladeOlympus.style.display = 'none';
   bladeInfo.style.display = 'none';
 });
-bladeOlympusB.addEventListener('click', event => {
-  buyBlade();
-});
+bladeOlympusB.addEventListener('click', buyBlade );
 
 leaveShop.addEventListener('mouseover', event => {
   hoverSound.play();
   gamebox.style.background = '#20130c';
   leaveShop.style.animation = 'horizontal-shaking 0.5s';
   atTrader.style.position = 'absolute';
-  atTrader.style.left = '35cm';
+  atTrader.style.left = '40cm';
   sparta.style.display = 'block';
 });
 leaveShop.addEventListener('mouseout', event => {
@@ -716,71 +877,135 @@ leaveShop.addEventListener('click', event => {
   bladeOlympusB.style.display = 'none';
   leaveShop.style.display = 'none';
   mainAppear();
+  hideHotbar();
 });
-
-let count = 0;
 
 function sellWeapon() {
   if (inventory.length > 1) {
-    achievement.play();
-    var sold = setInterval(() => {
-      count++;
-      orbs++;
-      orbsText.innerText = orbs;
-      if (count == 28) {
-        count = 0;
-        clearInterval(sold);
-      }
-    }, 140);
+    hmmmm.play();
+    switch (currentWeapon) {
+      case 0:
+        slot1.style.display = 'none';
+        var sold = setInterval(() => {
+          count++;
+          orbs++;
+          orbsText.innerText = orbs;
+          if (count == 17) {
+            count = 0;
+            clearInterval(sold);
+          }
+        }, 155);
+        currentWeapon -= 1;
+      break;
+      case 1:
+        slot2.style.display = 'none';
+        whipClaimed = false;
+        var sold2 = setInterval(() => {
+          count++;
+          orbs++;
+          orbsText.innerText = orbs;
+          if (count == 28) {
+            count = 0;
+            clearInterval(sold2);
+          }
+        }, 140);
+        currentWeapon -= 2;
+      break;
+      case 2:
+        slot3.style.display = 'none';
+        gauntletClaimed = false;
+        var sold3 = setInterval(() => {
+          count++;
+          orbs++;
+          orbsText.innerText = orbs;
+          if (count == 42) {
+            count = 0;
+            clearInterval(sold3);
+          }
+        }, 125);
+        currentWeapon -= 3;
+      break;
+      case 3:
+        slot4.style.display = 'none';
+        var sold4 = setInterval(() => {
+          clawsClaimed = false;
+          count++;
+          orbs++;
+          orbsText.innerText = orbs;
+          if (count == 70) {
+            count = 0;
+            clearInterval(sold4);
+          }
+      }, 110);
+      currentWeapon -= 4;
+      break;
+      case 4:
+        slot5.style.display = 'none';
+        bladeClaimed = false;
+        var sold5 = setInterval(() => {
+          count++;
+          orbs++;
+          orbsText.innerText = orbs;
+          if (count == 100) {
+            count = 0;
+            clearInterval(sold5);
+          }
+        }, 100);
+        currentWeapon -= 5;
+      break;
+    }
     currentWeapon = inventory.shift();
-    text.innerText = "You sold the " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
+    text2.innerText = "You sold the " + currentWeapon + ".";
+    text2.innerText += " In your inventory you have: " + inventory;
+    atTrader.style.display = 'none';
+    mVillager.style.display = 'block';
+    boc.style.display = 'none';
+    nemesisWhip.style.display = 'none';
+    gauntletZeus.style.display = 'none';
+    clawsHades.style.display = 'none';
+    bladeOlympus.style.display = 'none';
+    setTimeout(() => {
+      mVillager.style.display = 'none';
+      text2.style.color = '#ffad15';
+      text2.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
+      atTrader.style.display = 'block';
+    }, 2200 );
   } else {
     bruh.play();
-    text.innerText = "Don't sell your only weapon, you dumbass!";
+    text2.innerText = "Don't sell your only weapon, fool.";
     setTimeout(() => {
-      text.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
-    }, 5000 );
+      text2.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
+    }, 4000 );
   }
 }
 
-function increaseHealth() {
-  checkHealth();
-  if (orbs >= 22) {
+function buyPotion() {
+  if (orbs >= 17) {
     noice.play();
     var boughted = setInterval (() => {
       count++;
       orbs--;
       orbsText.innerText = orbs;
-      if (count == 22) {
+      if (count == 17) {
         count = 0;
         clearInterval(boughted);
       }
     }, 170 );
-    health += 10;
-    healthText.innerText = health;
-  } else {
+    potionquantity++;
+    pqText.innerText = potionquantity;
+    pslot.style.display = 'inline-block';
+   } else {
     brokie.play();
-    text.innerText = "You do not have enough orbs to buy a health potion, dummy!";
+    text2.innerText = "You do not have enough orbs to buy a health potion.";
     setTimeout(() => {
-    text.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
-    }, 4000 );
-  }
-}
-
-function checkHealth() {
-  if(health >= 36) {
-    gamebox.style.boxShadow = 'none';
-  } else if(health >= 200) {
-    health = 200;
-    healthText.inerText = health;
-    text.innerText = "You have reached you health capacity. YOu cannot buy anymore potions.";
-    return increaseHealth
+      text2.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
+    }, 4400 );
   }
 }
 
 function buyWhip() {
-  if(orbs >= 55) {
+  if(orbs >= 55 && whipClaimed == false) {
+    whipClaimed = true;
     achievement.play();
     var bought = setInterval (() => {
       count++;
@@ -791,28 +1016,43 @@ function buyWhip() {
         clearInterval(bought);
       }
     }, 100 );
-    let whip = weapons[1].name;
+    var whip = weapons[1].name;
     inventory.push(whip);
-    text.innerText = "You now have the " + whip + ".";
-    text.innerText += " In your inventory you have: " + inventory;
-    text.style.color = '#191970';
-    setTimeout(() => {
-      atTrader.style.display = 'none';
-    }, 1);
+    currentWeapon = 1;
+    text2.innerText = "You now have the " + whip + ".";
+    text2.innerText += " In your inventory you have: " + inventory;
+    text2.style.color = '#191970';
+    aTdis();   
     whipClaim.style.display = 'block';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.display = 'inline-block';
+    slot2.style.border = '3px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
     setTimeout(() => {
-      atTrader.style.display = 'block';
       whipClaim.style.display = 'none';
-    }, 4000 );
+      revert();
+    }, 4400 );
   } else {
-    brokie.play();
-    text.innerText = "You do not have enough orbs to buy the Nemesis whip. You are a brokie! Go fight enemies to earn more orbs.";
-    text.style.color = '#bb0a1e';
+    if (whipClaimed == false) {
+      brokie.play();
+      text2.innerText = "You do not have enough orbs to buy the Nemesis whip. You are a brokie! Go fight enemies to earn more orbs.";
+      text2.style.color = '#bb0a1e';
+    } else {
+      bruh.play();
+      text2.innerText = "You already have that weapon, you twat!";
+      text2.style.color = '#bb0a1e';
+    }
+    setTimeout(() => {
+      revert();
+    }, 3000 );
   }
 }
 
 function buyGauntlet() {
-  if(orbs >= 99) {
+  if(orbs >= 99 && gauntletClaimed == false) {
+    gauntletClaimed = true;
     achievement.play();
     var bought = setInterval (() => {
       count++;
@@ -823,28 +1063,44 @@ function buyGauntlet() {
         clearInterval(bought);
       }
     }, 80 );
-    let gauntlet = weapons[2].name;
+    var gauntlet = weapons[2].name;
     inventory.push(gauntlet);
-    text.innerText = "You now have the " + gauntlet + ".";
-    text.innerText = " In your inventory you have: " + inventory;
-    text.style.color = '#191970';
-    setTimeout(() => {
-      atTrader.style.display = 'none';
-    }, 1);
+    currentWeapon = 2;
+    text2.innerText = "You now have the " + gauntlet + ".";
+    text2.innerText = " In your inventory you have: " + inventory;
+    text2.style.color = '#191970';
+    atTrader.style.position = 'absolute';
+    atTrader.style.left = '40cm';   
     gauntletClaim.style.display = 'block';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.display = 'inline-block';
+    slot3.style.border = '3px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
     setTimeout(() => {
-      atTrader.style.display = 'block';
       gauntletClaim.style.display = 'none';
-    }, 4000 );
+      revert();
+    }, 4400 );
   } else {
-    brokie.play();
-    text.innerText = "You do not have enough orbs to buy the Gauntlet of Zeus. You are a brokie! Go fight enemies to earn more orbs.";
-    text.style.color = '#bb0a1e';
+    if (whipClaimed == false) {
+      brokie.play();
+      text2.innerText = "You do not have enough orbs to buy the Gauntlet of Zeus. You are a brokie! Go fight enemies to earn more orbs.";
+      text2.style.color = '#bb0a1e';
+    } else {
+      bruh.play();
+      text2.innerText = "You already have that weapon, you twat!";
+      text2.style.color = '#bb0a1e';
+    }
+    setTimeout(() => {
+      revert();
+    }, 3000 );
   }
 }
 
 function buyClaws() {
-  if(orbs >= 155) {
+  if(orbs >= 155 && clawsClaimed == false) {
+    clawsClaimed = true;
     achievement.play();
     var bought = setInterval (() => {
       count++;
@@ -855,28 +1111,43 @@ function buyClaws() {
         clearInterval(bought);
       }
     }, 55 );
-    let claws = weapons[3].name;
+    var claws = weapons[3].name;
     inventory.push(claws);
-    text.innerText = "You now have the " + claws + ".";
-    text.innerText = " In your inventory you have: " + inventory;
-    text.style.color = '#191970';
-    setTimeout(() => {
-      atTrader.style.display = 'none';
-    }, 1);
+    currentWeapon = 3;
+    text2.innerText = "You now have the " + claws + ".";
+    text2.innerText = " In your inventory you have: " + inventory;
+    text2.style.color = '#191970';
+    aTdis();   
     clawsClaim.style.display = 'block';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.display = 'inline-block';
+    slot4.style.border = '3px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
     setTimeout(() => {
-      atTrader.style.display = 'block';
       clawsClaim.style.display = 'none';
-    }, 4000 );
+      revert();
+    }, 4400 );
   } else {
-    brokie.play();
-    text.innerText = "You do not have enough orbs to buy the Claws of Hades. You are a brokie! Go fight enemies to earn more orbs.";
-    text.style.color = '#bb0a1e';
+    if (whipClaimed == false) {
+      brokie.play();
+      text2.innerText = "You do not have enough orbs to buy the Claws of Hades. You are a brokie! Go fight enemies to earn more orbs.";
+      text2.style.color = '#bb0a1e';
+    } else {
+      bruh.play();
+      text2.innerText = "You already have that weapon, you twat!";
+      text2.style.color = '#bb0a1e';
+    }
+    setTimeout(() => {
+      revert();
+    }, 3000 );
   }
 }
 
 function buyBlade() {
-  if(orbs >= 200) {
+  if(orbs >= 200 && bladeClaimed == false) {
+    bladeClaimed = true;
     achievement.play();
     var bought = setInterval (() => {
       count++;
@@ -887,26 +1158,216 @@ function buyBlade() {
         clearInterval(bought);
       }
     }, 35 );
-    let blade = weapons[4].name;
+    var blade = weapons[4].name;
     inventory.push(blade);
-    text.innerText = "You now have the " + blade + ".";
-    text.innerText = " In your inventory you have: " + inventory;
-    text.style.color = '#191970';
-    setTimeout(() => {
-      atTrader.style.display = 'none';
-    }, 1);
+    currentWeapon = 4;
+    text2.innerText = "You now have the " + blade + ".";
+    text2.innerText = " In your inventory you have: " + inventory;
+    text2.style.color = '#191970';
+    atTrader.style.position = 'absolute';
+    atTrader.style.left = '40cm';   
     bladeClaim.style.display = 'block';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.display = 'inline-block';
+    slot5.style.border = '3px solid #5a3910';
     setTimeout(() => {
-      atTrader.style.display = 'block';
       bladeClaim.style.display = 'none';
-    }, 4000 );
+      revert();
+    }, 4400 );
   } else {
-    brokie.play();
-    text.innerText = "You do not have enough orbs to buy the Blade of Olympus. You are a brokie! Go fight enemies to earn more orbs.";
-    text.style.color = '#bb0a1e';
+    if (whipClaimed == false) {
+      brokie.play();
+      text2.innerText = "You do not have enough orbs to buy the Blade of Olympus. You are a brokie! Go fight enemies to earn more orbs.";
+      text2.style.color = '#bb0a1e';
+    } else {
+      bruh.play();
+      text2.innerText = "You already have that weapon, you twat!";
+      text2.style.color = '#bb0a1e';
+    }
+    setTimeout(() => {
+      revert();
+    }, 3000 );
   }
 }
 
+function aTdis() {
+  atTrader.style.position = 'absolute';
+  atTrader.style.left = '40cm';
+}
+function aTap() {
+  atTrader.style.position = 'relative';
+  atTrader.style.left = '0';
+}
+
+function revert() {
+   text2.style.color = '#ffad15';
+   text2.innerText = "You enter the shop. You see a bunch of weapons that vary in power. Get the ones you can, or take a look at them for now if you are currently a brokie";
+   atTrader.style.position = 'relative';
+   atTrader.style.left = '0';
+}
+
+// Inventory functions 
+
+function showHotbar() {
+  hotbar.style.display = 'block';
+}
+function hideHotbar() {
+  hotbar.style.display = 'none';
+}
+
+pslot.addEventListener('click', increaseHealth );
+
+slot1.addEventListener('mouseover', event => {
+  if (currentWeapon != 0) {
+    slot1.style.border = '3px solid #5a3910';
+  }
+})
+
+slot1.addEventListener('mouseout', event => {
+  if (currentWeapon != 0) {
+    slot1.style.border = '1.8px solid #5a3910';
+  }
+});
+slot1.addEventListener('click', event => {
+  if (currentWeapon != 0) {
+    bocsound.play();
+    currentWeapon = 0;
+    slot1.style.border = '3px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
+  }
+});
+
+slot2.addEventListener('mouseover', event => {
+  if (currentWeapon != 1) {
+    slot2.style.border = '3px solid #5a3910';
+  }
+})
+slot2.addEventListener('mouseout', event => {
+  if (currentWeapon != 1) {
+    slot2.style.border = '1.8px solid #5a3910';
+  }
+});
+slot2.addEventListener('click', event => {
+  if (currentWeapon != 1) {
+    nwsound.play();
+    currentWeapon = 1;
+    slot2.style.border = '3px solid #5a3910';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
+  }
+});
+
+slot3.addEventListener('mouseover', event => {
+  if (currentWeapon != 2) {
+    slot3.style.border = '3px solid #5a3910';
+  }
+});
+slot3.addEventListener('mouseout', event => {
+  if (currentWeapon != 2) {
+    slot3.style.border = '1.8px solid #5a3910';
+  }
+});
+slot3.addEventListener('click', event => {
+  if (currentWeapon != 2) {
+    gozsound.play();
+    currentWeapon = 2;
+    slot3.style.border = '3px solid #5a3910';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
+  }
+});
+
+slot4.addEventListener('mouseover', event => {
+  if (currentWeapon != 3) {
+    slot4.style.border = '3px solid #5a3910';
+  }
+})
+slot4.addEventListener('mouseout', event => {
+  if (currentWeapon != 3) {
+    slot4.style.border = '1.8px solid #5a3910';
+  }
+});
+slot4.addEventListener('click', event => {
+  if (currentWeapon != 3) {
+    cohsound.play();
+    currentWeapon = 3;
+    slot4.style.border = '3px solid #5a3910';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot5.style.border = '1.8px solid #5a3910';
+  }
+});
+
+slot5.addEventListener('mouseover', event => {
+  if (currentWeapon != 4) {
+    slot5.style.border = '3px solid #5a3910';
+  }
+})
+slot2.addEventListener('mouseout', event => {
+  if (currentWeapon != 4) {
+    slot5.style.border = '1.8px solid #5a3910';
+  }
+});
+slot5.addEventListener('click', event => {
+  if (currentWeapon != 4) {
+    swordThud.play();
+    currentWeapon = 4;
+    slot5.style.border = '3px solid #5a3910';
+    slot1.style.border = '1.8px solid #5a3910';
+    slot2.style.border = '1.8px solid #5a3910';
+    slot3.style.border = '1.8px solid #5a3910';
+    slot4.style.border = '1.8px solid #5a3910';
+  }
+});
+
+function increaseHealth() {
+  if (health <= 35) {
+    drink.play();
+    potionquantity--;
+    pqText.innerText = potionquantity;
+    health += 10;
+    healthText.innerText = health;
+    if (potionquantity == 0) {
+      pslot.style.display = 'none';
+    }
+  } else if (health <= 239) {
+    drink.play();
+    potionquantity--;
+    pqText.innerText = potionquantity;
+    health += 10;
+    healthText.innerText = health;
+    gamebox.style.boxShadow = 'none';
+    if (potionquantity == 0) {
+      pslot.style.display = 'none';
+    }
+  } else {
+    health = 240;
+    healthText.innerText = health;
+    maxed.style.display = 'inline';
+    setTimeout(() => {
+       maxed.style.display = 'none'
+    }, 2000 );
+  }
+}
+
+// Key events
+
+document.addEventListener('keydown', event => {
+  if (event.key == 'f' && potionquantity >= 1) {
+   increaseHealth()
+  }
+});
 // Underworld functions
 
 hopliteB.addEventListener('mouseover', event => {
@@ -960,7 +1421,7 @@ bansheeB.addEventListener('mouseover', event => {
   bansheeSound.play();
   text2.style.display = 'none';
   enemyInfo.style.display = 'inline-block';
-  enemyInfo.innerText = "The Banshee is also known for having the ability to deliver a frightening inhuman scream that could harm and even kill humans. \n Damage: 15 p3s";
+  enemyInfo.innerText = "The Banshee is known for having the ability to deliver a frightening inhuman scream that could harm and even kill humans. \n Damage: 15 p3s";
   kratosUnderworld.style.display = 'none';
   banshee.style.display = 'block';
   bansheeB.style.animation = 'tilt-shaking 1.8s';
@@ -1250,9 +1711,7 @@ evadeB.addEventListener('mouseout', event => {
   hoverSound.currentTime = 0;
   evadeB.style.animation = 'grow';
 });
-evadeB.addEventListener('click', event => {
-  evade();
-});
+evadeB.addEventListener('click', evade );
 
 runB.addEventListener('mouseover', event => {
   hoverSound.play();
@@ -1277,8 +1736,9 @@ runB.addEventListener('click', event => {
   stopMusic();
   returnSound.play();
   text2.innerText = "You ran from the creature, knowing that you cannot defeat it.... or you're just a pussio."
-  setTimeout(() => {
+  tct = setTimeout(() => {
     text2.innerText = "You have arrived in the underworld. You see some strange creatures. Choose which one you want to attack. Be sure to attack one that you are sure you can defeat.";
+    timed = true;
   }, 8000 );
   enemyStats.style.display = 'none';
   evadeB.style.display = 'none';
@@ -1559,7 +2019,7 @@ leaveUnderworld.addEventListener('mouseover', event => {
   gamebox.style.background = '#20130c';
   leaveUnderworld.style.animation = 'horizontal-shaking 0.5s';
   kratosUnderworld.style.position = 'absolute';
-  kratosUnderworld.style.left = '35cm';
+  kratosUnderworld.style.left = '40cm';
   sparta.style.display = 'block';
 });
 leaveUnderworld.addEventListener('mouseout', event => {
@@ -1575,6 +2035,9 @@ leaveUnderworld.addEventListener('click', event => {
   underworldAm.pause();
   underworldAm.currentTime = 0;
   returnSound.play();
+  if (timed == false) {
+     clearTimeout(tct);
+  }
   kratosUnderworld.style.display = 'none';
   hopliteB.style.display = 'none';
   bansheeB.style.display = 'none';
@@ -1743,7 +2206,7 @@ attackZeus.addEventListener('mouseout', event => {
   attackZeus.style.animation = 'grow';
 });
 attackZeus.addEventListener('click', event => {
-  attackZeus.play();
+  attacksZeus.play();
   attack();
 });
 
@@ -1808,31 +2271,32 @@ rungod.addEventListener('click', event => {
       zeusxkratos.style.display = 'none';
       attackZeus.style.display = 'none';
       break;
-  }
-  setTimeout(() => {
-    olympusAm.play();
-  }, 2000 )
-  setTimeout(() => {
-    text.innerText = "You have now arrived at Olympus. Choose which god you want to battle. Be sure to at least have the Gauntlet weapon as these gods are strong.";
-  }, 8000);
-  enemyStats.style.display = 'none';
-  if (rungod.innerText = "Return") {
-     rungod.innerText = "Run";
-  }
-  rungod.style.display = 'none';
-  evadeB.style.display = 'none';
-  hermesB.style.display = 'inline';
-  hermesB.style.animationDuration = '2s';
-  hermesB.style.animationTimingFunction = 'linear';
-  herculesB.style.display = 'inline';
-  herculesB.style.animationDuration = '2s';
-  herculesB.style.animationTimingFunction = 'linear';
-  zeusB.style.display = 'inline';
-  zeusB.style.animationDuration = '2s';
-  zeusB.style.animationTimingFunction = 'linear';
-  leaveOlympus.style.display = 'inline';
-  leaveOlympus.style.animationDuration = '2s';
-  leaveOlympus.style.animationTimingFunction = 'linear';
+    }
+    setTimeout(() => {
+      olympusAm.play();
+    }, 500 );
+    tct2 = setTimeout(() => {
+      text.innerText = "You have now arrived at Olympus. Choose which god you want to battle. Be sure to at least have the Gauntlet weapon as these gods are strong.";
+      timed = true;
+    }, 8000);
+    enemyStats.style.display = 'none';
+    if (rungod.innerText = "Return") {
+       rungod.innerText = "Run";
+    }
+    rungod.style.display = 'none';
+    evadeB.style.display = 'none';
+    hermesB.style.display = 'inline';
+    hermesB.style.animationDuration = '2s';
+    hermesB.style.animationTimingFunction = 'linear';
+    herculesB.style.display = 'inline';
+    herculesB.style.animationDuration = '2s';
+    herculesB.style.animationTimingFunction = 'linear';
+    zeusB.style.display = 'inline';
+    zeusB.style.animationDuration = '2s';
+    zeusB.style.animationTimingFunction = 'linear';
+    leaveOlympus.style.display = 'inline';
+    leaveOlympus.style.animationDuration = '2s';
+    leaveOlympus.style.animationTimingFunction = 'linear';
 });
 
 // Olympus battle functions
@@ -1840,11 +2304,11 @@ rungod.addEventListener('click', event => {
 let hit = 0;
 
 function hermesShapa() {
-    hermat = setInterval (() => {
+  hermat = setInterval (() => {
     hit++;
-    if(hit == 1) {
+    if (hit == 1) {
       hermesAttacks.play();
-    } else if(hit >= 2) {
+    } else if (hit >= 2) {
       hermesAttacks2.play();
     }
     health -= getEnemyAttackValue(enemies[fighting].level);
@@ -1882,73 +2346,73 @@ function hermesShapa() {
         }, 80);
         clearInterval(hermat);
     }
-  }, 1000);
+  }, 1400);
 }
 
 function herculesShapa() {
   hercat = setInterval (() => {
-  hit++;
-  if(hit == 1) {
-    herculesAttacks.play();
-  } else if(hit >= 2) {
-    hermesAttacks2.play();
-  }
-  health -= getEnemyAttackValue(enemies[fighting].level);
-  healthText.innerText = health;
-  setTimeout (() => {
-    gamebox.style.animationPlayState = 'paused';
-  }, 1000 );
-  if (health <= 0) {
-    death();
-    setTimeout(() => {
-      herculesxkratos.style.display = 'none';
-    }, 1);
-    clearInterval(hercat);
-  } else if (health <= 35) {
-    lowHealth();
-  }
-  if (enemyHealth <= 0) {
-      defeatEnemy();
-      battleTheme2.pause();
-      battleTheme2.currentTime = 0;
-      setTimeout(() => {
+     hit++;
+     if(hit == 1) {
+         herculesAttacks.play();
+     } else if(hit >= 2) {
+         hermesAttacks2.play();
+     }
+     health -= getEnemyAttackValue(enemies[fighting].level);
+     healthText.innerText = health;
+     setTimeout (() => {
+         gamebox.style.animationPlayState = 'paused';
+     }, 1000 );
+     if (health <= 0) {
+       death();
+       setTimeout(() => {
         herculesxkratos.style.display = 'none';
-      }, 1);
-      herculesKill.style.display = 'block';
-      var hercef = setInterval(( )=> {
-        count += 2;
-        orbs += enemies[fighting].level - 8;
-        exp++;
-        orbsText.innerText = orbs;
-        expText.innerText = exp;
-        if (count == 136) {
-          count = 0;
-          clearInterval(hercef);
-        }
-      }, 80);
-      clearInterval(hercat);
-  }
+     }, 1);
+       clearInterval(hercat);
+     } else if (health <= 35) {
+         lowHealth();
+     }
+     if (enemyHealth <= 0) {
+         defeatEnemy();
+         battleTheme2.pause();
+         battleTheme2.currentTime = 0;
+         setTimeout(() => {
+             herculesxkratos.style.display = 'none';
+         }, 1);
+         herculesKill.style.display = 'block';
+         var hercef = setInterval(( )=> {
+           count += 2;
+           orbs += enemies[fighting].level - 8;
+           exp++;
+           orbsText.innerText = orbs;
+           expText.innerText = exp;
+           if (count == 136) {
+               count = 0;
+               clearInterval(hercef);
+            }
+          }, 80);
+        clearInterval(hercat);
+      }
   }, 3000);
 }
 
 function zeusShapa() {
   zeuat = setInterval (() => {
-  zeusAttacks.play();
-  health -= getEnemyAttackValue(enemies[fighting].level);
-  healthText.innerText = health;
-  setTimeout (() => {
-    gamebox.style.animationPlayState = 'paused';
-  }, 1000 );
-  if (health <= 0) {
-    death();
-    clearInterval(zeuat);
-  } else if (health <= 35) {
-    lowHealth();
-  }
-  if (enemyHealth <= 0) {
-    beatGame();
-  }
-}, 2800);
+     zeusAttacks.play();
+     health -= getEnemyAttackValue(enemies[fighting].level);
+     healthText.innerText = health;
+     setTimeout (() => {
+        gamebox.style.animationPlayState = 'paused';
+     }, 1000 );
+    if (health <= 0) {
+       death();
+       clearInterval(zeuat);
+    } else if (health <= 35) {
+       lowHealth();
+    }
+    if (enemyHealth <= 0) {
+       beatGame();
+    }
+  }, 2800);
 }
 
 // Olympus battle functions complete
@@ -2026,13 +2490,13 @@ function gaan(){
 function attack() {
   //text2.innerText = "You approach the " + enemies[fighting].name + " and the " + enemies[fighting].name + " detects you and attacks attacks.";
   //text2.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  enemyHealth -= weapons[currentWeapon].damage;    
+  enemyHealth -= weapons[currentWeapon].damage + Math.floor(Math.random() * exp);    
   enemyHealthText.innerText = enemyHealth;
 }
 
 function getEnemyAttackValue(level) {
   gamebox.style.animationPlayState = 'running';
-  var hit = (level * 4 + 1) + (Math.floor(Math.random() * exp));
+  var hit = (level * 4 + 1);
   console.log(hit);
   return hit > 0 ? hit : 0;
 }
@@ -2091,22 +2555,23 @@ function defeatEnemy() {
 
 function death() {
   stopMusic();
-  gamebox.style.background = 'black';
   settingsB.style.display = 'none';
   health = 0;
   healthText.innerText = health;
   heartbeat.pause();
   heartbeat.currentTime = 0;
   deathScream.play();
-  text.innerText = "You're dead 🫥. Guess now you really are the \"Ghost\" of sparta";
+  text2.innerText = "You're dead 🫥. Guess now you really are the \"Ghost\" of sparta";
   enemyStats.style.display = 'none';
   setTimeout(() => {
     kratosUnderworld.style.display = 'none';
-  }, 1);
+  }, 2);
   if (fighting <= 7) {
+    gamebox.style.background = 'black';
     youDead.style.display = 'block';
   } else {
     setTimeout(() => {
+      gamebox.style.background = '#321c1f';
       zeusxkratos.style.display = 'none';
       kratosDead.style.display = 'block';
     }, 1);
@@ -2116,26 +2581,6 @@ function death() {
   runB.style.display = 'none';
   rungod.style.display = 'none';
   reset.style.display = 'inline';
-}
-
-function stopMusic() {
-  if (fighting <= 1) {
-    battleTheme.pause();
-    battleTheme.currentTime = 0;
- } else if(fighting <= 4) {
-    battleTheme2.pause();
-    battleTheme.currentTime = 0;
- }
-  else if (fighting == 5) {
-    cyclopsBattle.pause();
-    cyclopsBattle.currentTime = 0;
- } else if (fighting <= 7) {
-    battleTheme2.pause();
-    battleTheme2.currentTime = 0;
- } else {
-    zeusBattle.pause();
-    zeusBattle.currentTime = 0;
- }
 }
 
 function gone() {
@@ -2160,7 +2605,7 @@ leaveOlympus.addEventListener('mouseover', event => {
   gamebox.style.background = '#20130c';
   leaveOlympus.style.animation = 'horizontal-shaking 0.5s';
   kratosOlympus.style.position = 'absolute';
-  kratosOlympus.style.left = '35cm';
+  kratosOlympus.style.left = '40cm';
   sparta.style.display = 'block';
 });
 leaveOlympus.addEventListener('mouseout', event => {
@@ -2176,6 +2621,9 @@ leaveOlympus.addEventListener('click', event => {
   olympusAm.pause();
   olympusAm.currentTime = 0;
   returnSound.play();
+  if (timed == false) {
+    clearTimeout(tct2);
+ }
   kratosOlympus.style.display = 'none';
   hermesB.style.display = 'none';
   herculesB.style.display = 'none';
@@ -2296,6 +2744,25 @@ function restart() {
   olympusB.style.animationDuration = '0.8s';
 }
 
+function stopMusic() {
+  if (fighting <= 1) {
+    battleTheme.pause();
+    battleTheme.currentTime = 0;
+   } else if(fighting <= 4) {
+    battleTheme2.pause();
+    battleTheme.currentTime = 0;
+   } else if (fighting == 5) {
+    cyclopsBattle.pause();
+    cyclopsBattle.currentTime = 0;
+   } else if (fighting <= 7) {
+    battleTheme2.pause();
+    battleTheme2.currentTime = 0;
+   } else {
+    zeusBattle.pause();
+    zeusBattle.currentTime = 0;
+  }
+}
+
 function ambienceStop() {
   if (fighting <= 5) {
     underworldAm.pause();
@@ -2307,10 +2774,10 @@ function ambienceStop() {
 }
 
 function mainAppear() {
-  if(pop == true) {
+  if(play == true) {
     menuTheme.play();
   }
-  musicOption.style.display = 'inline'
+  musicOption.style.display = 'inline';
   gamebox.style.background = '#464646';
   settingsB.style.background = '#464646';
   text2.style.display = 'none';
