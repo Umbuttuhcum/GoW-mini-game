@@ -7,17 +7,17 @@
      <title>God of War - mini game</title>
 	 <meta name="description" content="Just a little God of War mini game I am making to practice my JavaScript">
 	 <meta name="author" content="Kyrin Kompi">
-	 <link rel="icon" href="https://i.im.ge/2024/05/25/KsvyXY.GOW-symbol.png">
+	 <link rel="icon" href="imagery/GOW symbol .png">
 	 <link rel="stylesheet" href="Stylation .css">
 	 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap">
 	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.css">
   </head>
   <body>
-         <center><img id="Title" src="https://i.im.ge/2024/05/25/KaM7EW.God-of-war-title.jpeg"></center>                                                           <img id="Spartan" src="https://i.im.ge/2024/05/25/KsvdaL.Spartan.png">
+         <center><img id="Title" src="imagery/God of war title .png"></center>                                                           <img id="Spartan" src="imagery/Spartan .png">
      <div class="Game">
 	     <button id='music-option'>
 			 <i id ="music-note" class="fa-sharp fa-solid fa-music fa-xl" style="color: #0d0d0d;"></i>
-		 </button>
+		 </button> <span id="porp"> Play main menu music? </span>
 		 <button id="settings">
 		     <i id="gear" class="fa-solid fa-gear fa-xl" style="color: #0d0d0d;"></i>
 		 </button>
@@ -29,11 +29,13 @@
 				 <!-- <input type="range" min="10" max="100" value="100" id="volume-slider"> -->
 			        <i id="higher-volume" class="fa-solid fa-volume-high fa-xl"></i>
 			 </div>
+			 
 			 <br><br><br><br><br>
-			 <p>Current volume: <span id="Volume"> 100 </span></p>
+			 <p> Current volume: <span id="Volume"> 100 </span></p>
+			 <p> Expand gamebox: <i id="expand" class="fa-solid fa-expand"></i> </p>
 		</div>
          <div class="Stats">
-             <span class="stat">Exp: <strong><span id="Exp-text" >0</span></strong></span>
+             <span class="stat">Exp: <strong><span id="Exp-text">0</span></strong></span>
              <span class="stat">Health: <strong><span id="Health-text" >100</span></strong></span>
              <span class="stat">Orbs: <strong><span id="Orbs-text" >0</span></strong></span>
          </div>
@@ -55,23 +57,24 @@
              </div>
 			 </center>
 	       <center>
-		     <img id="Kratos-at-Sparta" src="https://i.pinimg.com/originals/39/ac/ba/39acba9b0124cc2533aa55c7acc2d758.jpg">
-			 <img id="Sparta" src="https://i.im.ge/2024/05/25/Ksv2Bc.Sparta.webp">
+		     <img class="exi def" id="Kratos-at-Sparta" src="imagery/Kratos at Sparta .png">
+			 <img class="exi def" id="Sparta" src="imagery/Sparta .png">
 			 
 		  <!-- shop images -->
 		  
-			 <img id="Trader" src="https://i.im.ge/2024/05/25/KsvqyG.Trader.jpeg">
-			 <img id="At-Trader" src="https://i.im.ge/2024/05/25/KsvUXS.At-Trader.jpeg">
-			 <img id="B-o-c" src="https://i.im.ge/2024/05/25/Ksv9aK.Blades-of-chaos.png">
-			 <img id="Potion" src="https://i.im.ge/2024/05/25/KsvAiD.Health-potion.png">
-			 <img id="Nemesis-whip" src="https://i.im.ge/2024/05/25/KsvFoW.Nemesis-Whip.png">
-			 <img id="Whip-claim" src="https://i.im.ge/2024/06/22/KpWjM8.Kratos-with-Nemesis-whip.png">
-			 <img id="Gauntlet-of-Zeus" src="https://i.im.ge/2024/05/25/KsvNwh.Gauntlet-of-Zeus.png">
-			 <img id="Gauntlet-claim" src="https://i.im.ge/2024/05/25/KspBYC.Kratos-with-Gauntlet-of-Zeus.png">
-			 <img id="Claws-of-Hades" src="https://i.im.ge/2024/05/25/KsvjA9.Claws-of-Hades.png">
-			 <img id="Claws-claim" src="https://i.im.ge/2024/05/25/KaMzR1.Kratos-with-Claws-of-hades.webp">
-			 <img id="Blade-of-Olympus" src="https://i.im.ge/2024/05/25/Ksv0GF.Blade-of-Olympus.png">
-			 <img id="Blade-claim" src="https://static.wikia.nocookie.net/godofwar/images/6/66/Blade_of_Olympus52.jpg/revision/latest/scale-to-width-down/250?cb=20120426015608">
+			 <img class="exi def" id="Trader" src="imagery/Trader .png">
+			 <img class="ex def" id="At-Trader" src="imagery/At Trader .png">
+			 <img class="exi def" id="Mvillager" src="imagery/Minecraft villager .png">
+			 <img class="exi def" id="B-o-c" src="imagery/Blades of chaos .png">
+			 <img class="exi" id="Potion" src="imagery/Health potion .png">
+			 <img class="exi def" id="Nemesis-whip" src="imagery/Nemesis Whip .png">
+			 <img class="exi def" id="Whip-claim" src="imagery/Kratos with Nemesis whip .png">
+			 <img class="exi" id="Gauntlet-of-Zeus" src="imagery/Gauntlet of Zeus .png">
+			 <img class="exi" id="Gauntlet-claim" src="imagery/Kratos with Gauntlet of Zeus .png">
+			 <img class="exi def" id="Claws-of-Hades" src="imagery/Claws of Hades .png">
+			 <img class="exi def" id="Claws-claim" src="imagery/Kratos with Claws of hades .png">
+			 <img class="exi" id="Blade-of-Olympus" src="imagery/Blade of Olympus .png">
+			 <img class="exi def" id="Blade-claim" src="imagery/Kratos with Blade of olympus .png">
 			 
 		  <!--  Shop items info -->
 		  
@@ -79,146 +82,151 @@
 			    <i><span id="Sell-text"> </span></i>
 			 </div>
 			 <div class="Potion-info">
-			    <i id="italics"> <font color="#299617"> +10 health </font></i> <br>
-			    <i id="italics"><font color="#8c4004">Price: </font> 22 orbs </i>
+			    <i class="Item-info" id="italics"> <font color="#299617"> +10 health </font></i> <br>
+			    <i class="Item-info" id="italics"><font color="#8c4004"> Price: </font> 17 orbs </i>
 			 </div>
 			 <div class="Whip-info">
-			    <i id="italics"><font color="#8c4004"> Price: </font> 55 orbs </i> <br>
-				<i id="italics"><font color="#c29200"> Damage: </font><span id ="Whip-damage"> </span> </i>
+			    <i class="Item-info" id="italics"><font color="#8c4004"> Price: </font> 55 orbs </i> <br>
+				<i class="Item-info" id="italics"><font color="#c29200"> Damage: </font><span id ="Whip-damage"> </span> </i>
 			 </div>
 			 <div class="Gauntlet-info">
-			    <i id="italics"><font color="#8c4004"> Price: </font> 99 orbs? </i> <br>
-				<i id="italics"><font color="#c29200"> Damage:  </font> <span id ="Gauntlet-damage"> </span> </i>
+			    <i class="Item-info" id="italics"><font color="#8c4004"> Price: </font> 99 orbs? </i> <br>
+				<i class="Item-info" id="italics"><font color="#c29200"> Damage:  </font> <span id ="Gauntlet-damage"> </span> </i>
 			 </div>
 			 <div class="Claws-info">
-			    <i id="italics"><font color="#8c4004"> Price: </font> 155 orbs </i> <br>
-				<i id="italics"><font color="#c29200"> Damage: </font> <span id ="Claws-damage"> </span> </i>
+			    <i class="Item-info" id="italics"><font color="#8c4004"> Price: </font> 155 orbs </i> <br>
+				<i class="Item-info" id="italics"><font color="#c29200"> Damage: </font> <span id ="Claws-damage"> </span> </i>
 			 </div>
 			 <div class="BladeO-info">
-			    <i id="italics"><font color="#8c4004"> Price: </font> 200 orbs </i> <br>
-				<i id="italics"><font color="#c29200"> Damage: </font> <span id ="Blade-damage"> </span> </i>
+			    <i class="Item-info" id="italics"><font color="#8c4004"> Price: </font> 200 orbs </i> <br>
+				<i class="Item-info" id="italics"><font color="#c29200"> Damage: </font> <span id ="Blade-damage"> </span> </i>
 			 </div>
 			 
 		  <!-- Underworld images -->
 		  
-			 <img id="Underworld" src="https://i.im.ge/2024/05/25/KsvsHx.Underworld.webp">
+			 <img class="exi" id="Underworld" src="imagery/Underworld .png">
 			 
-			 <img id="Kratos-in-Underworld" src="https://i.im.ge/2024/05/25/KsJaDC.Kratos-in-underworld.jpeg">
-			 <img id="Hoplite" src="https://i.im.ge/2024/05/25/KsvRKm.Hoplite.png">
-			 <img id="Hoplite-attack" src="https://i.im.ge/2024/05/25/KsvppG.Kratos-attacking-Hoplite.jpeg">
-			 <img id="Hoplite-kill" src="https://i.im.ge/2024/05/25/KspcWS.Kratos-killing-Hoplite.jpeg">
-			 <img id="Banshee" src="https://i.im.ge/2024/05/25/Ksvib6.Banshee.png">
-			 <img id="Banshee-attack" src="https://i.im.ge/2024/05/25/Ksvz7c.Kratos-attacking-Banshee.webp">
-			 <img id="Banshee-kill" src="https://i.im.ge/2024/05/25/Ksp8Tz.Kratos-kills-Banshee.png">
-			 <img id="Satyr" src="https://i.im.ge/2024/05/25/Ksv1bT.Satyr.png">
-			 <img id="Satyr-attack" src="https://i.im.ge/2024/05/25/KsJlv9.Kratos-attacks-Satyr.webp">
-			 <img id="Satyr-kill" src="https://i.im.ge/2024/05/25/KspVs9.Kratos-kills-Satyr.png">
-			 <img id="Minotaur" src="https://i.im.ge/2024/05/25/KsvTH1.Minotaur.png">
-			 <img id="Minotaur-attack" src="https://i.im.ge/2024/05/25/Ksve0S.Kratos-attacks-minotaur.png">
-			 <img id="Minotaur-kill" src="https://i.im.ge/2024/05/25/KspWYF.Kratos-kills-Minotaur.jpeg">
-			 <img id="Medusa" src="https://i.im.ge/2024/05/25/KsvQyP.Medusa.png">
-			 <img id="Medusa-attack" src="https://i.im.ge/2024/05/25/Ksv4KJ.Kratos-attacks-Medusa.jpeg">
-			 <img id="Medusa-kill" src="https://i.im.ge/2024/05/25/KspRU6.Kratos-kills-Medusa.webp">
-			 <img id="Cyclops" src="https://i.im.ge/2024/05/25/Ksv618.Cyclops.png">
-			 <img id="Cyclops-attack" src="https://i.im.ge/2024/05/25/Ksvn6a.Kratos-attacks-Cyclops.jpeg">
-			 <img id="Cyclops-kill" src="https://i.im.ge/2024/05/25/KspYFJ.Kratos-kills-Cyclops.webp">
+			 <img class="exi def" id="Kratos-in-Underworld" src="imagery/Kratos in underworld .png">
+			 <img class="exi" id="Hoplite" src="imagery/Hoplite .png">
+			 <img class="exi def" id="Hoplite-attack" src="imagery/Kratos attacking Hoplite .png">
+			 <img class="exi def" id="Hoplite-kill" src="imagery/Kratos killing Hoplite .png">
+			 <img class="exi" id="Banshee" src="imagery/Banshee .png">
+			 <img class="exi def" id="Banshee-attack" src="imagery/Kratos attacking Banshee .png">
+			 <img class="exi def" id="Banshee-kill" src="imagery/Kratos kills Banshee .png">
+			 <img class="exi" id="Satyr" src="imagery/Satyr .png">
+			 <img class="exi def" id="Satyr-attack" src="imagery/Kratos attacks Satyr .png">
+			 <img class="exi def"id="Satyr-kill" src="imagery/Kratos kills Satyr .png">
+			 <img class="exi def" id="Minotaur" src="imagery/Minotaur .png">
+			 <img class="exi" id="Minotaur-attack" src="imagery/Kratos attacks Minotaur .png">
+			 <img class="exi def" id="Minotaur-kill" src="imagery/Kratos kills Minotaur .png">
+			 <img class="exi" id="Medusa" src="imagery/Medusa .png">
+			 <img class="exi" id="Medusa-attack" src="imagery/Kratos attacks Medusa .png">
+			 <img class="exi" id="Medusa-kill" src="imagery/Kratos kills Medusa .png">
+			 <img class="exi def" id="Cyclops" src="imagery/Cyclops .png">
+			 <img class="exi def" id="Cyclops-attack" src="imagery/Kratos attacks Cyclops .png">
+			 <img class="exi def" id="Cyclops-kill" src="imagery/Kratos kills Cyclops .png">
 			 
 		  <!-- Mount Olympus images -->
 		  
-			 <img id="Mount-Olympus" src="https://i.im.ge/2024/05/25/Ksvlmm.Mount-Olympus.jpeg">
+			 <img class="exi" id="Mount-Olympus" src="imagery/Mount Olympus .png">
 			 
-			 <img id="Kratos-at-Olympus" src="https://i.im.ge/2024/05/25/KsvfeT.Kratos-at-Mount-Olympus.jpeg">
-			 <img id="Hermes" src="https://i.im.ge/2024/05/25/Ksvg21.Hermes.webp">
-			 <img id="HermesxKratos" src="https://i.im.ge/2024/05/25/Ksv8wf.Hermes-x-Kratos.jpeg">
-			 <img id="Hermes-fight" src="https://i.im.ge/2024/05/25/KsJ2rM.Kratos-fighting-Hermes.webp">
-			 <img id="Hermes-kill" src="https://i.im.ge/2024/05/25/Kspbjy.Kratos-killing-Hermes.jpeg">
-			 <img id="Hercules" src="https://i.im.ge/2024/05/25/Ksv37q.Hercules.webp">
-			 <img id="HerculesxKratos" src="https://i.im.ge/2024/05/25/KsvbpP.Hercules-x-Kratos.png">
-			 <img id="Hercules-fight" src="https://i.im.ge/2024/05/25/KsJqe4.Kratos-fights-Hercules.png">
-			 <img id="Hercules-kill" src="https://i.im.ge/2024/05/25/KsvYAp.Hercules-dead.jpeg">
-	                 <img id="Zeus" src="https://i.im.ge/2024/05/25/KsvDmJ.Zeus.webp">
-			 <img id="ZeusxKratos" src="https://i.im.ge/2024/05/25/KsvIZy.Zeus-x-Kratos.jpeg">
-			 <img id="Zeus-fight" src="https://i.im.ge/2024/05/25/KspHOh.Kratos-vs-Zeus.webp">
-			 <img id="Zeus-kill" src="https://i.im.ge/2024/05/25/KspfyX.Kratos-kills-Zeus.webp">
+			 <img class="exi def" id="Kratos-at-Olympus" src="imagery/Kratos at Mount Olympus .png">
+			 <img class="exi" id="Hermes"src="imagery/Hermes .png">
+			 <img class="exi def" id="HermesxKratos" src="imagery/Hermes x Kratos .png">
+			 <img class="exi def" id="Hermes-fight" src="imagery/Kratos fighting Hermes .png">
+			 <img class="exi def" id="Hermes-kill" src="imagery/Kratos killing Hermes .png">
+			 <img class="exi" id="Hercules" src="imagery/Hercules .png">
+			 <img class="exi" id="HerculesxKratos" src="imagery/Hercules x Kratos .png">
+			 <img class="exi" id="Hercules-fight" src="imagery/Kratos fights Hercules .png">
+			 <img class="exi" id="Hercules-kill" src="imagery/Hercules dead .png">
+	         <img class="exi" id="Zeus" src="imagery/Zeus .png">
+			 <img class="exi def" id="ZeusxKratos" src="imagery/Zeus x Kratos .png">
+			 <img class="exi def" id="Zeus-fight" src="imagery/Kratos vs Zues .png">
+			 <img class="exi def" id="Zeus-kill" src="imagery/Kratos kills Zeus .png">
 			 
 		 <!-- Battle images -->
 		 
 			 <!-- <img id="Kratos-evading" src="imagery/"> -->
-			 <img id="Kratos-running" src="https://i.im.ge/2024/05/25/Kspkz8.Kratos-running.png">
-			 <img id="You-dead" src="https://i.im.ge/2024/05/25/Ksv71a.You-are-dead-GoW-CoO.png">
-			 <img id="Kratos-dead" src="https://i.im.ge/2024/05/25/KsJF68.Kratos-dead.jpeg">
+			 <img class="exi" id="Kratos-running" src="imagery/Kratos running .png">
+			 <img class="exi" id="You-dead" src="imagery/You are dead GoW CoO .png">
+			 <img class="exi def" id="Kratos-dead" src="imagery/Kratos dead .png">
 		   </center>
 		   
 		 <div class="Controls">
 		 
       <!-- Shop buttons -->
 	  
-            <button id="Shop">Shop</button>
+            <button id="Shop" class="conbut" >Shop</button>
 			
-            <button id="Sell-weapon">Sell weapon</button>
-			<button id="Buy-health">Health potion</button>
-            <button id="Nemesis-whipB">Nemesis whip</button>
-            <button id="GauntletB">Gauntlet of Zeus</button>
-            <button id="Claws">Claws of Hades</button>
-            <button id="Blade-of-OlympusB">Blades of Olympus</button>
-            <button id="Leave-shop">Return to Sparta</button>
+            <button id="Sell-weapon" class="conbut">Sell weapon</button>
+			<button id="Buy-health" class="conbut">Health potion</button>
+            <button id="Nemesis-whipB" class="conbut">Nemesis whip</button>
+            <button id="GauntletB" class="conbut">Gauntlet of Zeus</button>
+            <button id="Claws" class="conbut">Claws of Hades</button>
+            <button id="Blade-of-OlympusB" class="conbut">Blades of Olympus</button>
+            <button id="Leave-shop" class="conbut">Return to Sparta</button>
 			
 		 <!-- Underworld -->
 		 
-            <button id="Underworld-button">Underworld</button>
+            <button id="Underworld-button" class="conbut">Underworld</button>
 			
 		 <!--  Battle Hoplite -->
-			<button id="HopliteB">Hoplite</button>
-		    <button id="Attack-Hoplite">Attack</button>
+			<button id="HopliteB" class="conbut">Hoplite</button>
+		    <button id="Attack-Hoplite" class="conbut">Attack</button>
 		 <!-- Battle  Banshee -->
-			<button id="BansheeB">Banshee</button>
-			<button id="Attack-Banshee">Attack</button>
+			<button id="BansheeB" class="conbut">Banshee</button>
+			<button id="Attack-Banshee" class="conbut">Attack</button>
 		 <!-- Battle Satyr -->
-		    <button id="SatyrB">Satyr</button>
-			<button id="Attack-Satyr">Attack</button>
+		    <button id="SatyrB" class="conbut">Satyr</button>
+			<button id="Attack-Satyr" class="conbut">Attack</button>
 		 <!-- Battle  Minotaur -->
-			<button id="MinotaurB">Minotaur</button>
-			<button id="Attack-Minotaur">Attack</button>
+			<button id="MinotaurB" class="conbut">Minotaur</button>
+			<button id="Attack-Minotaur" class="conbut">Attack</button>
 		 <!-- Battle  Medusa-->
-			<button id="MedusaB">Medusa</button>
-			<button id="Attack-Medusa">Attack</button>
+			<button id="MedusaB" class="conbut">Medusa</button>
+			<button id="Attack-Medusa" class="conbut">Attack</button>
 		 <!-- Battle  Cyclops -->
-			<button id="CyclopsB">Cyclops</button>
-			<button id="Attack-Cyclops">Attack</button>
+			<button id="CyclopsB" class="conbut">Cyclops</button>
+			<button id="Attack-Cyclops" class="conbut">Attack</button>
 			
 		 <!-- Other options  underworld-->
 		 
-			<button id="Evade-enemy">Evade</button>
-			<button id="Escape-enemy">Run</button>
-			<button id="Leave-Underworld">Return to Sparta</button>
+			<button id="Evade-enemy" class="conbut">Evade</button>
+			<button id="Escape-enemy" class="conbut">Run</button>
+			<button id="Leave-Underworld" class="conbut">Return to Sparta</button>
 			
 		 <!-- Mount Olympus -->
 		 
-            <button id="Olympus-button">Mount Olympus</button>
+            <button id="Olympus-button" class="conbut">Mount Olympus</button>
 			
 		 <!-- Hermes battle -->
-			<button id="HermesB">Hermes</button>
-			<button id="Attack-Hermes">Attack</button>
+			<button id="HermesB" class="conbut">Hermes</button>
+			<button id="Attack-Hermes" class="conbut">Attack</button>
 		 <!-- Hercules battle -->
-			<button id="HerculesB">Hercules</button>
-			<button id="Attack-Hercules">Attack</button>
+			<button id="HerculesB" class="conbut">Hercules</button>
+			<button id="Attack-Hercules" class="conbut">Attack</button>
 		 <!-- Zeus battle -->
-			<button id="ZeusB">Zeus</button>
-			<button id="Attack-Zeus">Attack</button>
+			<button id="ZeusB" class="conbut">Zeus</button>
+			<button id="Attack-Zeus" class="conbut">Attack</button>
 			
 		 <!-- Other options Olympus -->
 		 
-			<button id="Run-from-god">Run</button>
-			<button id="Leave-Olympus">Return to Sparta</button>
+			<button id="Run-from-god" class="conbut">Run</button>
+			<button id="Leave-Olympus" class="conbut">Return to Sparta</button>
 			
 		 <!-- Reset -->
 		 
-			<button id='Reset'>Restart?</button>   
+			<button id='Reset' class="conbut"> Restart? </button>   
 			
          </div>
+		 <div class="Hotbar">
+		     <center>
+		     <span id="Maxed"> You have reached max health </span><span id="Pslot"><font color="#8d1713"> F </font><p id="potion-quantity"> 1 </p></span>
+		     <span id="Slot1"></span><span id="Slot2"></span><span id="Slot3"></span><span id="Slot4"></span><span id="Slot5"></span>
+			 </center>
+		 </div>
      </div>
 	 <h2> Careful not to reload the page or you will lose all progress. </h2>
-	 <!-- <div class="Kratos3D"> -->
 	 </div>
      <script src="Functions .js"></script>
   </body>
