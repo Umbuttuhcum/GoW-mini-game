@@ -2,6 +2,10 @@
 	 font-family: GodOfWar;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
      background-color: black;
 }
@@ -12,8 +16,8 @@ body {
 
 .Game {
 	 position: relative;
-     max-width: 800px;
-     max-height: 580px;
+     width: 840px;
+     max-height: 800px;
 	 border-radius: 12px;
      background-color: #464646; /* #970b0c */
      color: #501003; /* #ffad15 */
@@ -27,6 +31,8 @@ body {
 	 animation-play-state: paused;
 }
 
+/* Icons and containers styling */
+
 #music-option, #settings {
 	 height: 42px;
 	 width: 35px;
@@ -35,16 +41,18 @@ body {
 	 border: 2px solid #1a1210;
 }
 
-#settings {
-	position: relative;
-	left: 19.1cm;
-}
-
 #music-option:hover, #settings:hover {
 	 background: grey;
 	 cursor: pointer;
 	 border: 2px solid #332822;
 	 box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#porp {
+	 font-family: Arial;
+	 font-size: 12px;
+	 color: white;
+	 display: none;
 }
 
 .Settings {
@@ -58,12 +66,16 @@ body {
 	 margin-top: 12px;
 	 padding: 8px;
 	 position: absolute;
-	 left: 13.4cm;
+	 left: 14.2cm;
 	 color: lightgrey;
 }
 
 .Settings p {
 	 text-align: center;
+}
+
+#settings {
+	float: right;
 }
 
 #lower-volume, #higher-volume, #mute {
@@ -91,6 +103,18 @@ body {
 #Volume {
 	 color: #2e271d;
 }
+
+#expand {
+	 margin-left: 12px;
+}
+
+#expand:hover {
+	 cursor: pointer;
+	 color: #2e271d;
+	 scale: 1.2;
+}
+
+/* Containers and text syling */
 
 .Stats {
 	 margin-bottom: 12px;
@@ -124,9 +148,11 @@ body {
 
 .stat {
      padding-right: 12px;
+	 font-size: 17px;
 }
 
-#text {
+#text, #text2 {
+	 font-size: 17px;
      color: white; /* #ffad15 */
      padding: 10px;
 	 margin-bottom: 15px;
@@ -134,20 +160,20 @@ body {
 
 #text2 {
 	 display: none;
-	 padding: 10px;
-	 margin-bottom: 15px;
+	 width: 666px;
 	 color: #ffad15;
 }
 
 #Enemy-info {
 	 display: none;
-	 margin-top: 10px;
+	 margin-top: 15px;
 	 margin-bottom: 15px;
 	 padding: 5px;
 	 border-radius: 8px;
 	 width: 666px;
 	 border: 3px outset #501003;
 	 text-align: center;
+	 font-size: 17px;
 	 color: #1d0807;
 	 background-color: #97897c;
 	 animation: slide;
@@ -156,20 +182,22 @@ body {
 	 animation-timing-function: ease-in-out;
 }
 
+/* Image styling */
+
 #Kratos-at-Sparta {
 	 height: 220px;
-	 width: 440px;
+	 width: 480px;
 	 border: 4px inset #464646;
 	 margin-bottom: 28px;
 }
 
-#Trader, #At-Trader, #B-o-c, #Potion, #Nemesis-whip, 
-#Whip-claim, #Gauntlet-of-Zeus, #Gauntlet-claim, 
-#Claws-of-Hades, #Claws-claim, #Blade-of-Olympus, 
-#Blade-claim, #Underworld, #Kratos-in-Underworld, 
-#Hoplite, #Hoplite-attack, #Hoplite-kill, #Banshee, 
-#Banshee-attack, #Banshee-kill, #Satyr, #Satyr-attack, 
-#Satyr-kill, #Minotaur, #Minotaur-attack, 
+#Trader, #Mvillager, #At-Trader, #B-o-c, #Potion, 
+#Nemesis-whip, #Whip-claim, #Gauntlet-of-Zeus, 
+#Gauntlet-claim, #Claws-of-Hades, #Claws-claim, 
+#Blade-of-Olympus, #Blade-claim, #Underworld, 
+#Kratos-in-Underworld, #Hoplite, #Hoplite-attack, 
+#Hoplite-kill, #Banshee, #Banshee-attack, #Banshee-kill, 
+#Satyr, #Satyr-attack, #Satyr-kill, #Minotaur, #Minotaur-attack, 
 #Minotaur-kill, #Medusa, #Medusa-attack, #Medusa-kill, 
 #Cyclops, #Cyclops-attack, #Cyclops-kill, #Mount-Olympus, 
 #Kratos-at-Olympus, #Hermes, #HermesxKratos, 
@@ -192,16 +220,23 @@ body {
 #Trader, #At-Trader {
 	border: 4px inset #09090b;
 }
-#Potion, #B-o-c, #Nemesis-whip, #Gauntlet-of-Zeus, #Claws-of-Hades, #Blade-of-Olympus, 
-#Hoplite, #Banshee, #Satyr, #Minotaur, #Medusa, #Cyclops, #Hermes, #Hercules, #Zeus,
-#Kratos-running, #You-dead {
+#Mvillager, #Potion, #B-o-c, #Nemesis-whip, #Whip-claim, #Gauntlet-of-Zeus, #Gauntlet-claim, #Claws-of-Hades, #Claws-claim,
+#Blade-of-Olympus, #Blade-claim, #Hoplite, #Banshee, #Satyr, #Minotaur, #Medusa, #Cyclops, #Hermes, #Hercules, #Zeus,
+#Kratos-running, #You-dead, #Kratos-dead {
 	border: none;
+}
+
+#Mvillager {
+	width: 180px;
 }
 #Potion {
 	width: 220px;
 }
 #Gauntlet-of-Zeus {
 	width: 227px;
+}
+#Gauntlet-claim {
+	width: 140px;
 }
 #Blade-of-Olympus {
 	width: 365px;
@@ -247,12 +282,6 @@ body {
 	border: 4px outset #393220;
 	width: 400px;
 }
-#Kratos-running {
-	width: 380px;
-}
-#You-dead{
-	width: 580px;
-}
 
 #Mount-Olympus {
 	width: 440px;
@@ -272,15 +301,15 @@ body {
 	border: 4px outset #3f2b0b;
 }
 #HerculesxKratos {
-	width: 420px;
+	width: 445px;
 	border: 4px outset #59636f;
 }
 #Hercules-fight {
-	width: 420px;
+	width: 380px;
 	border: 4px outset #2d2f32;
 }
 #Hercules-kill {
-	width: 420px;
+	width: 435px;
 	border: 4px outset #5c9aab;
 }
 #Zeus {
@@ -295,12 +324,21 @@ body {
 #Zeus-kill {
 	border: 3px outset #a29078;
 }
+
 #Kratos-running {
-	width: 420px;
+	width: 380px;
 }
+#You-dead {
+	width: 580px;
+}
+
+/* Item info styling */
 
 .Sell-price, .Potion-info, .Whip-info, .Gauntlet-info, .Claws-info, .BladeO-info {
     display: none;
+	max-width: 220px;
+	max-height: 80px;
+	padding: 8px;
 	position: relative;
 	bottom: 2cm;
 	z-index: 2;
@@ -311,29 +349,12 @@ body {
 	line-height: 17px;
 }
 
-.Sell-price {
-	padding: 4px;
-    margin-right: 40px;
-	height: 35px;
-	width: 220px;
-}
-
-.Potion-info {
-	padding: 4px;
-	height: 50px;
-	width: 120px;
-}
-
-.Whip-info, .Gauntlet-info, .Claws-info, .BladeO-info {
-	padding: 5px;
-	height: 35px;
-	width: 140px;
-}
-
 .Gauntlet-info {
 	bottom: 2.8cm;
 	left: 1cm;
 }
+
+/* Buttons styling */
 
 .Controls button {
      cursor: pointer;
@@ -342,11 +363,11 @@ body {
 	 padding-bottom: 2px;
 	 margin-bottom: 17px;
 	 margin-right: 8px;
-	 height: 28px;
+	 height: 30px;
 	 width: 5cm;
 	 border-radius: 10px;
      color: #0a0a23;
-	 font-size: 18px;
+	 font-size: 17px;
 	 font-family: GodOfWar;
 }
 
@@ -367,11 +388,15 @@ body {
 #CyclopsB, #Attack-Cyclops, #HermesB, #Attack-Hermes, 
  #HerculesB, #Attack-Hercules, #ZeusB, #Attack-Zeus,
 #Run-from-god, #Leave-Olympus, #Reset {
-	 display: none;
-	 animation: grow;
-	 animation-delay: 0s;
-	 animation-timing-function: linear;
-	 animation-duration: 2s;
+	display: none;
+	animation: grow;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+}
+
+#Leave-shop, #Leave-Underworld, #Leave-Olympus {
+	margin: 0 auto;
 }
 
 #Blade-of-OlympusB, #Leave-Underworld, #Leave-Olympus {
@@ -390,6 +415,96 @@ body {
 	animation: rotateY 1.2s linear;
 }
 
+/* Hotbar styling */
+
+.Hotbar {
+	margin-top: 20px;
+	margin-bottom: 12px;
+	display: none;
+}
+
+#Maxed {
+	display: none;
+	position: relative;
+	bottom: 17px;
+	margin-right: 10px;
+	font-family: Tahoma;
+	font-size: 14px;
+	color: white;
+}
+
+#Pslot, #Slot1, #Slot2, #Slot3, #Slot4, #Slot5 {
+	 margin: 0 auto;
+	 display: inline-block;
+	 width: 55px;
+	 height: 45px;
+	 border: 1.8px solid #5a3910;
+	 background-size: cover;
+	 backface-visibility: hidden;
+	 background-attachment: fixed;
+}
+
+#Slot1 {
+	 border: 3px solid #5a3910; 
+}
+
+#Pslot, #Slot2, #Slot3, #Slot4, #Slot5 {
+	 display: none;
+	 position: relative;
+	 animation: slide-from-right 1.2s ease-in-out;
+}
+
+#Pslot:hover, #Slot1:hover, #Slot2:hover, #Slot3:hover, #Slot4:hover, #Slot5:hover {
+	 cursor: pointer;
+}
+
+#Pslot p {
+	text-align: right;
+}
+
+#Pslot {
+	margin-right: 50px;
+	background-image: url('Imagery/Health potion .png');
+	color: white;
+	padding: 5px;
+	animation: slide-from-left 1.2s ease-in-out;
+}
+
+#Pslot:hover {
+   border: 3px solid #5a3910; 
+}
+
+#Slot1 {
+	 background-image: url('Imagery/boc .png');
+}
+
+#Slot2 {
+	 background-image: url('Imagery/Nemesis whip .png');
+	 background-position: center;
+}
+
+#Slot3 {
+	 background-image: url('Imagery/goz .png');
+}
+#Slot3:hover {
+	 transition: all 0.3s ease 0s;
+	 background-position: center;
+}
+
+#Slot4 {
+	 background-image: url('imagery/coh .png');
+}
+
+#Slot5 {
+	 background-image: url('Imagery/boo .png');
+}
+#Slot5:hover {
+	 transition: all 0.3s ease 0s;
+	 background-position: center;
+}
+
+/* Animations */
+
 @keyframes slide {
 	from{
 		margin-left: 80%;
@@ -399,12 +514,21 @@ body {
 	}
 }
 
-@keyframes slide-left {
+@keyframes slide-from-left {
 	from{
-		right: 0;
+		right: 20cm;
 	}
 	to {
-		right: 20cm;
+		right: 0;
+	}
+}
+
+@keyframes slide-from-right {
+	from{
+		left: 20cm;
+	}
+	to {
+		left: 0;
 	}
 }
 
@@ -462,6 +586,8 @@ body {
 @keyframes rotateZ {
 	 100%{transform: rotateZ(360deg)}
 }
+
+/* Extras styling */
 
 h2 {
 	text-align: center;
