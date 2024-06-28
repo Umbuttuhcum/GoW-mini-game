@@ -96,7 +96,7 @@ let medusaSound;
 let medusaAttacks = new Audio('Audio/Medusa attacks Kratos .mp3');
 let attacksMedusa = new Audio('Audio/Kratos attacks Medusa .mp3');
 let olympusAm = new Audio('Audio/Olympus ambience .mp3');
-let cyclopsSound = new Audio('Audio/Cyclops Sound .mp3');
+let cyclopsSound = new Audio('Audio/Cyclops sound .mp3');
 let cyclopsAttacks = new Audio('Audio/Cyclops attacks .mp3');
 let cyclopsAttacks2 = new Audio('Audio/Cyclops attacks 2 .mp3');
 let attacksCyclops = new Audio('Audio/Kratos attacks Cyclops .mp3');
